@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIrTourer - Mentions Légales & Politique de Confidentialité</title>
+  <meta name="description" content="Mentions légales et Politique de confidentialité de l'application mobile AIrTourer. Information sur le respect du RGPD et l'usage de la géolocalisation.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #4F46E5;
+      --primary-hover: #4338CA;
+      --primary-light: #EEF2FF;
+      --accent: #10B981;
+      --text-main: #0F172A;
+      --text-muted: #64748B;
+      --bg-body: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --border-color: #E2E8F0;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      --radius: 12px;
+      --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    [data-theme="dark"] {
+      --primary: #6366F1;
+      --primary-hover: #818CF8;
+      --primary-light: #1E1B4B;
+      --accent: #34D399;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --bg-body: #0F172A;
+      --bg-card: #1E293B;
+      --border-color: #334155;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.7;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary), #818CF8);
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-subtitle {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn-icon {
+      background: var(--bg-body);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .btn-icon:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* Main Container */
+    .main-wrapper {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      flex: 1;
+      width: 100%;
+    }
+
+    /* Hero Banner */
+    .hero-card {
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.08), rgba(16, 185, 129, 0.08));
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.35rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .badge-success {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent);
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    .hero-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 800px;
+    }
+
+    /* Navigation Tabs */
+    .tabs-nav {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 2px solid var(--border-color);
+      margin-bottom: 2rem;
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      padding: 0.85rem 1.5rem;
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+      margin-bottom: -2px;
+    }
+
+    .tab-btn:hover {
+      color: var(--primary);
+    }
+
+    .tab-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    /* Content Layout */
+    .content-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Legal Document Formatting */
+    .legal-doc h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .legal-doc .update-date {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-style: italic;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .legal-doc h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .legal-doc h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .legal-doc p {
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .legal-doc ul {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+
+    .legal-doc li {
+      margin-bottom: 0.5rem;
+    }
+
+    .legal-doc strong {
+      font-weight: 700;
+    }
+
+    .legal-doc hr {
+      border: none;
+      border-top: 1px solid var(--border-color);
+      margin: 2rem 0;
+    }
+
+    .highlight-box {
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-tag {
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    /* Action bar inside tab */
+    .doc-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      color: var(--text-main);
+    }
+
+    .btn:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border-color);
+      padding: 2rem 1.5rem;
+      margin-top: 4rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--text-main);
+      color: var(--bg-body);
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 100;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .main-wrapper {
+        padding: 0 1rem;
+      }
+      .content-card {
+        padding: 1.5rem;
+      }
+      .hero-title {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="#" class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-compass"></i>
+        </div>
+        <div>
+          <div class="brand-title">AIrTourer</div>
+          <div class="brand-subtitle">Portail Légal & Confidentialité</div>
+        </div>
+      </a>
+      
+      <div class="header-actions">
+        <button class="btn-icon" id="theme-toggle" title="Changer le thème">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-wrapper">
+
+    <!-- Hero Card -->
+    <section class="hero-card">
+      <div class="hero-badges">
+        <span class="badge badge-success"><i class="fa-solid fa-shield-halved"></i> RGPD Conforme</span>
+        <span class="badge"><i class="fa-brands fa-apple"></i> App Store Ready</span>
+        <span class="badge"><i class="fa-brands fa-google-play"></i> Google Play Compliant</span>
+      </div>
+      <h1 class="hero-title">Mentions Légales & Protection des Données</h1>
+      <p class="hero-desc">
+        Transparence totale concernant l'édition de l'application mobile <strong>AIrTourer</strong> et le traitement de vos données personnelles. Consultez ci-dessous les Mentions Légales et la Politique de Confidentialité.
+      </p>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <nav class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('mentions')">
+        <i class="fa-solid fa-scale-balanced"></i> Mentions Légales
+      </button>
+      <button class="tab-btn" onclick="switchTab('confidentialite')">
+        <i class="fa-solid fa-user-shield"></i> Politique de Confidentialité
+      </button>
+    </nav>
+
+    <!-- Content Area -->
+    <div class="content-card">
+
+      <!-- TAB 1: Mentions Légales -->
+      <article id="mentions" class="tab-content active legal-doc">
+        <div class="doc-actions">
+          <button class="btn" onclick="copyTabMarkdown('mentions')"><i class="fa-regular fa-copy"></i> Copier en Markdown</button>
+          <button class="btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Imprimer</button>
+        </div>
+
+        <h1>Mentions Légales</h1>
+        <p class="update-date">En vigueur au : 06/08/2026</p>
+
+        <h2><i class="fa-solid fa-user-gear"></i> 1. Éditeur du service</h2>
+        <p>L'application mobile <strong>AIrTourer</strong> (ci-après "l'Application") est éditée par :</p>
+        <ul>
+          <li><strong>Exploitant</strong> : <span class="info-tag">Bertelot Corentin</span> (Entreprise Individuelle)</li>
+          <li><strong>Siège social</strong> : <span class="info-tag">4 Domaine de la Ferme Delmotte, 59117 Wervicq-Sud</span></li>
+          <li><strong>Numéro SIRET</strong> : <span class="info-tag">10762763000018</span></li>
+          <li><strong>Directeur de la publication</strong> : <span class="info-tag">Bertelot Corentin</span></li>
+          <li><strong>Adresse email de contact / Support</strong> : <span class="info-tag">ai.audiotourer@gmail.com</span></li>
+        </ul>
+
+        <h2><i class="fa-solid fa-server"></i> 2. Hébergement & Infrastructure</h2>
+        <p>L'infrastructure cloud et la base de données de l'application sont hébergées par :</p>
+        <ul>
+          <li>
+            <strong>Supabase, Inc.</strong><br>
+            Adresse : 970 Toa Payoh North #07-04, Singapore 318992 / 8 The Green, Suite A, Dover, DE 19901, USA<br>
+            Site internet : <a href="https://supabase.com" target="_blank" rel="noopener">https://supabase.com</a><br>
+            <em>Rôle : Stockage sécurisé des données applicatives et authentification.</em>
+          </li>
+        </ul>
+
+        <h2><i class="fa-solid fa-copyright"></i> 3. Propriété Intellectuelle</h2>
+        <p>
+          L'ensemble de l'application (incluant les textes, visuels, logos, éléments sonores, guides audio, bases de données, code source et architecture) est protégé par les lois relatives à la propriété intellectuelle.
+        </p>
+        <p>
+          Toute reproduction, représentation, adaptation, modification ou exploitation totale ou partielle du contenu de l'application, par quelque procédé que ce soit, sans l'autorisation écrite préalable de l'Éditeur, est strictement interdite et constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle.
+        </p>
+
+        <h2><i class="fa-solid fa-mobile-screen"></i> 4. Conditions d'accès et fonctionnement</h2>
+        <p>
+          L'application est accessible en téléchargement sur les plateformes officielles (Apple App Store et Google Play Store).
+        </p>
+        <p>
+          L'Éditeur s'efforce d'assurer un accès continu et de qualité au service. Toutefois, sa responsabilité ne saurait être engagée en cas d'interruption de service, de dysfonctionnement du réseau Internet ou d'incompatibilité avec l'équipement de l'utilisateur.
+        </p>
+
+        <h2><i class="fa-solid fa-triangle-exclamation"></i> 5. Limitation de responsabilité</h2>
+        <p>
+          Les informations et contenus culturels/touristiques fournis dans l'application le sont à titre informatif. L'Éditeur met tout en œuvre pour garantir l'exactitude des contenus, mais ne saurait être tenu responsable d'éventuelles inexactitudes ou omissions.
+        </p>
+        <p>
+          L'utilisateur demeure seul responsable de sa sécurité lors de ses déplacements sur le terrain pendant l'utilisation de l'application.
+        </p>
+
+        <h2><i class="fa-solid fa-gavel"></i> 6. Droit applicable et juridiction</h2>
+        <p>
+          Les présentes Mentions Légales sont soumises au droit français. Tout litige relatif à leur interprétation ou à leur exécution relève de la compétence exclusive des tribunaux français.
+        </p>
+      </article>
+
+      <!-- TAB 2: Politique de Confidentialité -->
+      <article id="confidentialite" class="tab-content legal-doc">
+        <div class="doc-actions">
+          <button class="btn" onclick="copyTabMarkdown('confidentialite')"><i class="fa-regular fa-copy"></i> Copier en Markdown</button>
+          <button class="btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Imprimer</button>
+        </div>
+
+        <h1>Politique de Confidentialité</h1>
+        <p class="update-date">Dernière mise à jour : 06/08/2026</p>
+
+        <p>
+          Nous accordons une importance fondamentale au respect de la vie privée et à la protection des données à caractère personnel des utilisateurs de notre application mobile <strong>AIrTourer</strong>.
+        </p>
+        <p>
+          La présente Politique de Confidentialité détaille la manière dont vos données sont traitées, conformément au Règlement Général sur la Protection des Données (RGPD - Règlement UE 2016/679), à la Loi Informatique et Libertés du 6 janvier 1978 modifiée, ainsi qu'aux directives de confidentialité des plateformes <strong>Apple App Store</strong> et <strong>Google Play Store</strong>.
+        </p>
+
+        <h2><i class="fa-solid fa-user-shield"></i> 1. Responsable du Traitement des Données</h2>
+        <p>Le traitement des données personnelles collectées dans le cadre de l'application est effectué sous la responsabilité de :</p>
+        <ul>
+          <li><strong>Éditeur</strong> : <span class="info-tag">Bertelot Corentin</span> (Entreprise Individuelle)</li>
+          <li><strong>Adresse</strong> : <span class="info-tag">4 Domaine de la Ferme Delmotte, 59117 Wervicq-Sud</span></li>
+          <li><strong>SIRET</strong> : <span class="info-tag">10762763000018</span></li>
+          <li><strong>Email de contact / DPO</strong> : <span class="info-tag">ai.audiotourer@gmail.com</span></li>
+        </ul>
+
+        <h2><i class="fa-solid fa-location-dot"></i> 2. Traitement des Données de Géolocalisation (Usage Spécifique)</h2>
+        <div class="highlight-box">
+          <p><strong><i class="fa-solid fa-circle-check"></i> Garanties strictes sur la géolocalisation :</strong></p>
+          <ul>
+            <li><strong>Finalité exclusive</strong> : L'accès à la position en temps réel de votre appareil sert <strong>UNIQUEMENT</strong> à centrer la carte sur votre écran pour améliorer votre confort de navigation visuelle.</li>
+            <li><strong>Indépendance des contenus (POI)</strong> : La géolocalisation n'est <strong>PAS</strong> nécessaire pour charger ou afficher les points d'intérêt (POI) autour de vous.</li>
+            <li><strong>Absence de stockage et de transmission</strong> : <strong>Aucune donnée de géolocalisation n'est enregistrée en base de données, stockée sur un serveur ou transmise à des tiers.</strong> Votre position est calculée et traitée exclusivement en local sur votre smartphone de manière éphémère (0 seconde de stockage).</li>
+            <li><strong>Contrôle utilisateur</strong> : Vous pouvez refuser la géolocalisation à tout moment via les réglages de votre smartphone et continuer d'utiliser normalement l'application.</li>
+          </ul>
+        </div>
+
+        <h2><i class="fa-solid fa-database"></i> 3. Autres Données Traitées & Finalités</h2>
+        <ul>
+          <li><strong>Données techniques et de diagnostic</strong> : Données anonymisées nécessaires à la stabilité de l'application (version OS, modèle d'appareil).</li>
+          <li><strong>Gestion des comptes (si applicable)</strong> : En cas de création d'un compte, votre adresse email et vos identifiants sont chiffrés et stockés de façon sécurisée par notre hébergeur.</li>
+        </ul>
+
+        <h2><i class="fa-solid fa-network-wired"></i> 4. Destinataires et Sous-traitants</h2>
+        <p>Vos données personnelles ne sont <strong>jamais vendues, louées ou cédées</strong> à des tiers à des fins commerciales ou publicitaires.</p>
+        <p>Le seul sous-traitant d'infrastructure technique susceptible d'intervenir est :</p>
+        <ul>
+          <li><strong>Supabase, Inc.</strong> : Hébergement sécurisé de la base de données et gestion de l'authentification.</li>
+        </ul>
+
+        <h2><i class="fa-solid fa-clock-rotate-left"></i> 5. Durée de Conservation des Données</h2>
+        <ul>
+          <li><strong>Géolocalisation</strong> : <strong>0 seconde</strong> (traitement en temps réel local uniquement).</li>
+          <li><strong>Données de compte (si applicable)</strong> : Conservées pendant la durée d'utilisation du compte, supprimées sous 30 jours sur simple demande.</li>
+        </ul>
+
+        <h2><i class="fa-solid fa-hand-holding-hand"></i> 6. Vos Droits (Conformité RGPD)</h2>
+        <p>Conformément au RGPD, vous disposez des droits suivants concernant vos données :</p>
+        <ul>
+          <li><strong>Droit d'accès</strong> (Art. 15) : Obtenir la confirmation du traitement de vos données et en recevoir copie.</li>
+          <li><strong>Droit de rectification</strong> (Art. 16) : Corriger ou compléter vos données.</li>
+          <li><strong>Droit à l'effacement</strong> (Art. 17) : Demander la suppression définitive de vos données personnelles.</li>
+          <li><strong>Droit à la limitation</strong> (Art. 18) : Demander le gel temporaire du traitement.</li>
+          <li><strong>Droit à la portabilité</strong> (Art. 20) : Récupérer vos données dans un format structuré.</li>
+          <li><strong>Droit d'opposition</strong> (Art. 21) : S'opposer au traitement de vos données.</li>
+          <li><strong>Retrait du consentement</strong> : Désactiver la géolocalisation à tout moment dans les réglages de votre smartphone.</li>
+        </ul>
+
+        <div class="highlight-box">
+          <p><strong><i class="fa-solid fa-envelope"></i> Comment exercer vos droits ?</strong></p>
+          <p>Pour toute demande, envoyez un email à : <span class="info-tag">ai.audiotourer@gmail.com</span>.</p>
+          <p>Délai de réponse maximal : <strong>30 jours</strong>.</p>
+        </div>
+
+        <p>
+          En cas de contestation non résolue, vous pouvez introduire une réclamation auprès de la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés - <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>).
+        </p>
+
+        <h2><i class="fa-solid fa-store"></i> 7. Conformité Stores (Apple & Google)</h2>
+        <p>
+          Cette Politique répond intégralement aux exigences d'Apple (App Store Privacy Guidelines) et de Google (Google Play User Data Policy) concernant le respect de la vie privée, le droit à l'effacement et le refus de traçage GPS sans stockage.
+        </p>
+
+        <h2><i class="fa-solid fa-pen-to-square"></i> 8. Modifications de la Politique</h2>
+        <p>
+          Cette Politique peut être mise à jour pour s'adapter aux évolutions légales et techniques. La date de dernière mise à jour sera ajustée en conséquence.
+        </p>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> AIrTourer. Tous droits réservés. - Hébergé sur GitHub Pages</p>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">
+    <i class="fa-solid fa-circle-check" style="color: #10B981;"></i>
+    <span id="toast-msg">Copié dans le presse-papier !</span>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Tab Switching
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+      if (tabId === 'mentions') {
+        document.querySelectorAll('.tab-btn')[0].classList.add('active');
+        document.getElementById('mentions').classList.add('active');
+      } else {
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+        document.getElementById('confidentialite').classList.add('active');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Dark Theme Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    let isDark = localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : prefersDark;
+
+    function applyTheme() {
+      if (isDark) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+      }
+    }
+    applyTheme();
+
+    themeToggleBtn.addEventListener('click', () => {
+      isDark = !isDark;
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      applyTheme();
+    });
+
+    // Copy Raw Markdown for Notion / GitHub / Stores
+    const rawMarkdown = {
+      mentions: `# Mentions Légales\n\n*En vigueur au : 06/08/2026*\n\n## 1. Éditeur du service\nL'application mobile **AIrTourer** est éditée par :\n- **Exploitant** : Bertelot Corentin EI (Entreprise Individuelle)\n- **Siège social** : 4 Domaine de la Ferme Delmotte, 59117 Wervicq-Sud\n- **Numéro SIRET** : 10762763000018\n- **Directeur de la publication** : Bertelot Corentin\n- **Adresse email de contact / Support** : ai.audiotourer@gmail.com\n\n## 2. Hébergement & Infrastructure\n- **Supabase, Inc.** (970 Toa Payoh North #07-04, Singapore 318992 / USA)\n\n## 3. Propriété Intellectuelle\nL'ensemble du contenu de l'application est protégé par le droit d'auteur.\n\n## 4. Conditions d'accès\nApplication accessible sur Apple App Store et Google Play Store.\n\n## 5. Limitation de responsabilité\nInformations fournies à titre indicatif.\n\n## 6. Droit applicable\nDroit français.`,
+      confidentialite: `# Politique de Confidentialité\n\n*Dernière mise à jour : 06/08/2026*\n\n## 1. Responsable du Traitement\n- **Éditeur** : Bertelot Corentin EI\n- **Adresse** : 4 Domaine de la Ferme Delmotte, 59117 Wervicq-Sud\n- **SIRET** : 10762763000018\n- **Email** : ai.audiotourer@gmail.com\n\n## 2. Géolocalisation (Usage Spécifique)\n- **Centrage carte uniquement** : L'accès GPS sert UNIQUEMENT à centrer la carte sur votre écran en temps réel.\n- **Indépendance des POI** : Pas nécessaire pour charger les POI.\n- **Aucun stockage** : Aucune donnée de géolocalisation n'est enregistrée en base de données, stockée sur serveur ou partagée avec des tiers.\n- **Désactivation possible** à tout moment via les réglages du smartphone.\n\n## 3. Sous-traitant\n- Supabase, Inc. (Base de données et authentification)\n\n## 4. Vos Droits (RGPD)\nAccès, rectification, effacement, limitation, portabilité, opposition. Contact : ai.audiotourer@gmail.com. Réclamation CNIL (www.cnil.fr).`
+    };
+
+    function copyTabMarkdown(tabKey) {
+      const textToCopy = rawMarkdown[tabKey];
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        showToast('Texte Markdown copié dans le presse-papier !');
+      }).catch(err => {
+        console.error('Erreur de copie', err);
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

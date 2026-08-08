@@ -457,7 +457,10 @@
 
     <!-- Navigation Tabs -->
     <nav class="tabs-nav">
-      <button class="tab-btn active" onclick="switchTab('mentions')">
+      <button class="tab-btn active" onclick="switchTab('apropos')">
+        <i class="fa-solid fa-circle-info"></i> À Propos
+      </button>
+      <button class="tab-btn" onclick="switchTab('mentions')">
         <i class="fa-solid fa-scale-balanced"></i> Mentions Légales
       </button>
       <button class="tab-btn" onclick="switchTab('confidentialite')">
@@ -468,8 +471,37 @@
     <!-- Content Area -->
     <div class="content-card">
 
-      <!-- TAB 1: Mentions Légales -->
-      <article id="mentions" class="tab-content active legal-doc">
+      <!-- TAB 1: À Propos -->
+      <article id="apropos" class="tab-content active legal-doc">
+        <div class="doc-actions">
+          <button class="btn" onclick="copyTabMarkdown('apropos')"><i class="fa-regular fa-copy"></i> Copier en Markdown</button>
+          <button class="btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Imprimer</button>
+        </div>
+
+        <h1>À Propos de AIrTourer</h1>
+        <p class="update-date">Version 1.0.0 (POC)</p>
+
+        <h2><i class="fa-solid fa-circle-info"></i> Présentation</h2>
+        <p>
+          <strong>AIrTourer</strong> est une application mobile moderne de guidage touristique audio et géolocalisé. Elle vous accompagne lors de vos visites culturelles en vous révélant les secrets et récits captivants des points d'intérêt à proximité.
+        </p>
+
+        <h2><i class="fa-solid fa-star"></i> Fonctionnalités principales</h2>
+        <ul>
+          <li><strong>Carte interactive</strong> : Explorez les points d'intérêt patrimoniaux en temps réel autour de vous.</li>
+          <li><strong>Guides audio immersifs</strong> : Écoutez des explications détaillées et scénarisées avec gestion de la lecture en arrière-plan.</li>
+          <li><strong>Parcours guidés thématiques</strong> : Suivez des itinéraires soigneusement préparés pour ne rien manquer des étapes clés.</li>
+          <li><strong>Respect de la vie privée</strong> : Géolocalisation utilisée exclusivement pour le confort visuel sur la carte, aucune donnée GPS stockée.</li>
+        </ul>
+
+        <h2><i class="fa-solid fa-envelope"></i> Contact & Support</h2>
+        <p>
+          Pour toute question ou information complémentaire, contactez-nous à : <span class="info-tag">ai.audiotourer@gmail.com</span>
+        </p>
+      </article>
+
+      <!-- TAB 2: Mentions Légales -->
+      <article id="mentions" class="tab-content legal-doc">
         <div class="doc-actions">
           <button class="btn" onclick="copyTabMarkdown('mentions')"><i class="fa-regular fa-copy"></i> Copier en Markdown</button>
           <button class="btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Imprimer</button>
@@ -640,11 +672,14 @@
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
       document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
 
-      if (tabId === 'mentions') {
+      if (tabId === 'apropos') {
         document.querySelectorAll('.tab-btn')[0].classList.add('active');
+        document.getElementById('apropos').classList.add('active');
+      } else if (tabId === 'mentions') {
+        document.querySelectorAll('.tab-btn')[1].classList.add('active');
         document.getElementById('mentions').classList.add('active');
       } else {
-        document.querySelectorAll('.tab-btn')[1].classList.add('active');
+        document.querySelectorAll('.tab-btn')[2].classList.add('active');
         document.getElementById('confidentialite').classList.add('active');
       }
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -674,6 +709,7 @@
 
     // Copy Raw Markdown for Notion / GitHub / Stores
     const rawMarkdown = {
+      apropos: `# À Propos de AIrTourer\n\nAIrTourer est une application mobile de guidage touristique audio et géolocalisé. Explorez le patrimoine culturel à votre rythme avec des commentaires audio immersifs et des parcours guidés thématiques.\n\n## Fonctionnalités principales\n- **Carte interactive** avec points d'intérêt culturels (POI).\n- **Itinéraires guidés** scénarisés.\n- **Écoute audio** fluide même écran éteint.\n- **Protection de la vie privée** (aucun traçage GPS conservé).\n\nContact : ai.audiotourer@gmail.com`,
       mentions: `# Mentions Légales\n\n*En vigueur au : 06/08/2026*\n\n## 1. Éditeur du service\nL'application mobile **AIrTourer** est éditée par :\n- **Exploitant** : Bertelot Corentin EI (Entreprise Individuelle)\n- **Siège social** : 4 Domaine de la Ferme Delmotte, 59117 Wervicq-Sud\n- **Numéro SIRET** : 10762763000018\n- **Directeur de la publication** : Bertelot Corentin\n- **Adresse email de contact / Support** : ai.audiotourer@gmail.com\n\n## 2. Hébergement & Infrastructure\n- **Supabase, Inc.** (970 Toa Payoh North #07-04, Singapore 318992 / USA)\n\n## 3. Propriété Intellectuelle\nL'ensemble du contenu de l'application est protégé par le droit d'auteur.\n\n## 4. Conditions d'accès\nApplication accessible sur Apple App Store et Google Play Store.\n\n## 5. Limitation de responsabilité\nInformations fournies à titre indicatif.\n\n## 6. Droit applicable\nDroit français.`,
       confidentialite: `# Politique de Confidentialité\n\n*Dernière mise à jour : 06/08/2026*\n\n## 1. Responsable du Traitement\n- **Éditeur** : Bertelot Corentin EI\n- **Adresse** : 4 Domaine de la Ferme Delmotte, 59117 Wervicq-Sud\n- **SIRET** : 10762763000018\n- **Email** : ai.audiotourer@gmail.com\n\n## 2. Géolocalisation (Usage Spécifique)\n- **Centrage carte uniquement** : L'accès GPS sert UNIQUEMENT à centrer la carte sur votre écran en temps réel.\n- **Indépendance des POI** : Pas nécessaire pour charger les POI.\n- **Aucun stockage** : Aucune donnée de géolocalisation n'est enregistrée en base de données, stockée sur serveur ou partagée avec des tiers.\n- **Désactivation possible** à tout moment via les réglages du smartphone.\n\n## 3. Sous-traitant\n- Supabase, Inc. (Base de données et authentification)\n\n## 4. Vos Droits (RGPD)\nAccès, rectification, effacement, limitation, portabilité, opposition. Contact : ai.audiotourer@gmail.com. Réclamation CNIL (www.cnil.fr).`
     };

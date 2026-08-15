@@ -1,92 +1,110 @@
 # Politique de Confidentialité
 
-*Dernière mise à jour : 06/08/2026*
+*Dernière mise à jour : 15/08/2026*
 
-Nous accordons une importance fondamentale au respect de la vie privée et à la protection des données à caractère personnel des utilisateurs de notre application mobile **AIrTourer**.
+Nous accordons une importance fondamentale au respect de la vie privée et à la protection des données à caractère personnel des utilisateurs de notre application mobile **Airtourer**.
 
 La présente Politique de Confidentialité détaille la manière dont vos données sont traitées, conformément au Règlement Général sur la Protection des Données (RGPD - Règlement UE 2016/679), à la Loi Informatique et Libertés du 6 janvier 1978 modifiée, ainsi qu'aux directives de confidentialité des plateformes **Apple App Store** et **Google Play Store**.
 
 ---
 
 ## 1. Responsable du Traitement des Données
-Le traitement des données personnelles collectées dans le cadre de l'application est effectué sous la responsabilité de :
 
-- **Éditeur** : `Bertelot Corentin` (Entreprise Individuelle)
-- **Adresse** : `4 Domaine de la Ferme Delmotte, 59117 Wervicq-Sud`
-- **SIRET** : `10762763000018`
+Le traitement des données personnelles dans le cadre de l'application est effectué sous la responsabilité de :
+
+- **Éditeur / Développeur** : `Airtourer`
+- **Localisation** : `Lille, France`
 - **Email de contact / DPO** : `ai.audiotourer@gmail.com`
 
 ---
 
-## 2. Traitement des Données de Géolocalisation (Usage Spécifique)
+## 2. Traitement des Données de Géolocalisation & GPS
 
-L'accès à la position GPS de votre appareil est encadré par des règles de confidentialité très strictes :
+L'accès à la position de votre appareil est encadré par des règles de confidentialité strictes et transparentes :
 
-- **Finalité exclusive de la géolocalisation** : L'accès à la position en temps réel de votre appareil sert **UNIQUEMENT** à centrer la carte sur votre écran pour améliorer votre confort de navigation visuelle lors de votre parcours.
-- **Indépendance des contenus (POI)** : La géolocalisation n'est **PAS** nécessaire pour charger ou afficher les points d'intérêt (POI) autour de vous. Tous les POI et contenus audio sont accessibles et consultables même si la géolocalisation est désactivée.
-- **Absence de stockage et de transmission** : **Aucune donnée de géolocalisation n'est enregistrée en base de données, stockée sur un serveur ou transmise à des tiers.** Votre position est calculée et traitée exclusivement en local sur votre smartphone, de manière éphémère (temps réel), sans aucun historique ni traçabilité.
-- **Contrôle et désactivation** : Vous pouvez choisir d'autoriser ou de refuser l'accès à votre géolocalisation lors du premier lancement de l'application. Vous pouvez également activer ou désactiver cette autorisation à tout moment dans les réglages système de votre smartphone (iOS ou Android). Le refus de la géolocalisation n'altère en rien l'accès aux fonctionnalités principales de l'application.
-
----
-
-## 3. Autres Données Traitées & Finalités
-
-- **Données techniques et de diagnostic** : Lors de l'utilisation de l'application, des données d'erreurs anonymes ou techniques (version de l'OS, modèle de l'appareil) peuvent être traitées pour assurer la maintenance et la stabilité de l'application.
-- **Gestion des comptes (si applicable)** : En cas d'inscription dans l'application, votre adresse email et vos identifiants sont chiffrés et stockés de façon sécurisée afin d'assurer l'authentification et l'accès à vos parcours audio sauvegardés.
+- **Usage exclusif en temps réel (éphémère)** : La position GPS de votre appareil est utilisée uniquement en direct pour **calculer la distance jusqu'aux points d'intérêt (POI)** touristiques et **fournir le guidage pas-à-pas d'itinéraire** sur la carte interactive.
+- **Traitement 100% en mémoire locale (RAM)** : Vos coordonnées GPS sont traitées exclusivement dans la mémoire vive de votre appareil. Elles ne sont **JAMAIS enregistrées sur des serveurs distants**, ni journalisées (logs), ni transmises, ni partagées ou vendues à des tiers.
+- **Aucune localisation en arrière-plan** : L'application **ne demande PAS et n'utilise PAS** l'autorisation de localisation en arrière-plan (*Background Location*). Dès que l'application est en arrière-plan ou fermée, toute lecture du signal GPS s'arrête immédiatement.
+- **Contrôle et liberté de l'utilisateur** : Vous pouvez autoriser ou refuser l'accès à la position GPS lors du lancement de l'application ou à tout moment dans les réglages système de votre smartphone. Le refus de la géolocalisation n'empêche pas l'accès aux fiches des POI et aux audioguides.
 
 ---
 
-## 4. Destinataires et Sous-traitants
+## 3. Absence de Compte & Stockage Local Sécurisé (SecureStore)
 
-Vos données personnelles ne sont **jamais vendues, louées ou cédées** à des tiers à des fins commerciales ou publicitaires.
+Airtourer applique une approche stricte de protection de la vie privée dès la conception (*Privacy by Design*) :
 
-Le seul sous-traitant d'infrastructure technique susceptible de traiter des données de manière sécurisée est :
-
-- **Supabase, Inc.** : Pour l'hébergement de la base de données sécurisée et la gestion de l'authentification.
-
-Ce prestataire respecte la réglementation européenne (RGPD) et garantit la sécurité et la confidentialité de vos données via des protocoles de chiffrement conformes aux standards de l'industrie.
-
----
-
-## 5. Durée de Conservation des Données
-
-- **Données de géolocalisation** : **0 seconde** (traitement en temps réel uniquement, aucune conservation).
-- **Données de compte / profil** (le cas échéant) : Conservées pendant toute la durée d'activation de votre compte. En cas de suppression de compte, vos données sont définitivement effacées sous 30 jours.
+- **Zéro inscription / Zéro compte requis** : Aucun compte utilisateur, email, identifiant ou mot de passe n'est demandé pour accéder aux fonctionnalités de l'application.
+- **Stockage chiffré sur l'appareil (SecureStore)** : Les données d'état nécessaires au fonctionnement de l'application sont stockées exclusivement en local sur votre terminal dans un stockage sécurisé et chiffré (*SecureStore*). Ces données comprennent :
+  - Le solde de jetons / crédits d'écoute audio gratuits ;
+  - Les identifiants (IDs) des points d'intérêt (POI) débloqués ;
+  - Vos préférences de langue (interface et audio).
+- Ces données restent entièrement sur votre terminal et ne sont jamais transmises à des serveurs distants.
 
 ---
 
-## 6. Vos Droits (Conformité RGPD)
+## 4. Publicité & Gestion du Consentement (Google AdMob & Google UMP)
 
-Conformément à la réglementation sur les données personnelles, vous disposez des droits suivants :
+L'application intègre un modèle de monétisation respectueux via des vidéos récompensées :
 
-- **Droit d'accès** (Art. 15 RGPD) : Obtenir la confirmation que vos données sont traitées et en recevoir une copie.
-- **Droit de rectification** (Art. 16 RGPD) : Demander la mise à jour ou la correction de vos données inexactes ou incomplètes.
-- **Droit à l'effacement / Droit à l'oubli** (Art. 17 RGPD) : Demander la suppression définitive de vos données personnelles.
-- **Droit à la limitation du traitement** (Art. 18 RGPD) : Demander le gel temporaire du traitement de vos données dans les cas prévus par la loi.
-- **Droit à la portabilité** (Art. 20 RGPD) : Récupérer vos données fournies dans un format structuré et lisible.
-- **Droit d'opposition** (Art. 21 RGPD) : Vous opposer à tout moment au traitement de vos données.
-- **Droit de retrait du consentement** : Vous pouvez retirer votre consentement à la géolocalisation à tout instant via les paramètres de votre téléphone.
+- **Annonces vidéo récompensées AdMob** : Les utilisateurs peuvent choisir de visionner une courte vidéo publicitaire fournie par Google AdMob afin d'obtenir **5 crédits d'écoute gratuits** par vidéo.
+- **Consentement RGPD via Google UMP (CMP)** : Pour les utilisateurs situés dans l'Union Européenne (UE), le Royaume-Uni (UK) et l'Espace Économique Européen (EEE), le consentement est recueilli et géré via la plateforme **Google UMP (User Messaging Platform)**, une CMP certifiée conforme aux exigences du RGPD et au standard IAB TCF.
+- **Modification et révocation à tout moment** : Vous pouvez à tout moment revoir, modifier ou révoquer vos choix de consentement publicitaire directement dans l'application depuis l'écran **« Paramètres » (Settings)**.
+
+---
+
+## 5. Lecture Audio en Arrière-plan (Foreground Service)
+
+- **Autorisation `FOREGROUND_SERVICE_MEDIA_PLAYBACK`** : L'application utilise cette autorisation Android strictly pour la lecture multimédia.
+- **Finalité** : Permettre aux utilisateurs de continuer à écouter leurs guides audio lorsque l'écran de leur smartphone est éteint/verrouillé ou lorsque l'application est réduite en arrière-plan pendant la visite.
+- Ce service d'avant-plan ne réalise aucun traçage GPS ni aucune collecte de données personnelles.
+
+---
+
+## 6. Destinataires et Sous-traitants
+
+Vos données personnelles ne sont **jamais vendues, louées ou cédées** à des tiers à des fins commerciales.
+
+Les prestataires techniques intervenant pour le fonctionnement du service sont :
+- **Google Ireland Limited** : Pour la diffusion des publicités vidéo récompensées (Google AdMob) et la gestion du consentement réglementaire (Google UMP).
+- **GitHub Pages** (GitHub, Inc.) : Pour l'hébergement du site statique d'information légale.
+
+---
+
+## 7. Durée de Conservation des Données
+
+- **Données de géolocalisation GPS** : **0 seconde** (traitement en temps réel volatil en mémoire RAM uniquement, aucune conservation).
+- **Données locales (SecureStore)** : Conservées sur votre appareil jusqu'à la réinitialisation des données de l'application ou sa désinstallation.
+
+---
+
+## 8. Vos Droits (Conformité RGPD)
+
+Conformément à la réglementation européenne sur la protection des données, vous disposez des droits suivants :
+
+- **Droit d'accès et d'information** (Art. 15 RGPD) : Connaître les traitements appliqués.
+- **Droit à l'effacement** (Art. 17 RGPD) : Supprimer définitivement vos données locales par simple désinstallation de l'application.
+- **Droit de retrait du consentement** (Art. 21 RGPD) : Modifier vos préférences GPS dans les réglages système de votre téléphone et vos choix de consentement publicitaire dans l'écran Paramètres de l'application.
 
 ### Exercer vos droits
-Pour toute demande concernant l'exercice de vos droits ou pour toute question relative à cette politique, contactez-nous par email à :  
+Pour toute question ou demande concernant vos données personnelles :  
 👉 **`ai.audiotourer@gmail.com`**
 
-Nous nous engageons à répondre à toute demande dans un délai maximal de **30 jours**.
+Délai légal de réponse maximal : **30 jours**.
 
-Si vous estimez que vos droits n'ont pas été respectés, vous avez le droit d'introduire une réclamation auprès de l'autorité de contrôle compétente :  
+Si vous estimez que vos droits n'ont pas été respectés, vous pouvez déposer une réclamation auprès de l'autorité compétente :  
 **CNIL (Commission Nationale de l'Informatique et des Libertés)**  
-3 Place de Fontenoy - TSA 80715 - 75334 PARIS CEDEX 07  
 Site internet : [https://www.cnil.fr](https://www.cnil.fr)
 
 ---
 
-## 7. Conformité Stores (Apple App Store & Google Play Store)
+## 9. Conformité aux Guides des Stores (Apple App Store & Google Play Store)
 
-Cette Politique de Confidentialité répond strictement aux exigences des guides de validation des stores d'applications :
-- **Apple App Store Privacy Requirements** : Transparence sur l'utilisation du GPS local, absence de tracking publicitaire (No IDFA tracking), respect de la vie privée.
-- **Google Play User Data Policy** : Déclaration claire de la collecte minimale, consentement explicite de la géolocalisation, possibilité de demande de suppression des données.
+Cette Politique de Confidentialité répond intégralement aux exigences des magasins d'applications :
+- **Apple App Store Privacy Guidelines** : Usage transparent du GPS en temps réel sans tracking IDFA, absence de profilage abusif, respect strict de la vie privée.
+- **Google Play User Data Policy** : Déclaration transparente de la permission Foreground Service Media Playback, conformité Google UMP / CMP pour la publicité, absence de géolocalisation en arrière-plan.
 
 ---
 
-## 8. Modifications de la Politique
-Nous nous réservons le droit d'adapter la présente Politique de Confidentialité pour refléter l'évolution des réglementations ou des fonctionnalités de l'application. La date de dernière mise à jour figurant en haut du document sera modifiée en conséquence.
+## 10. Modifications de la Politique
+
+Nous nous réservons le droit de mettre à jour la présente Politique de Confidentialité pour refléter l'évolution des réglementations ou des fonctionnalités de l'application. La date de dernière mise à jour sera ajustée en conséquence.

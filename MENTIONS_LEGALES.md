@@ -18,6 +18,9 @@ Les infrastructures et services associés au fonctionnement de l'application et 
 - **Hébergement du site d'information** :
   - GitHub Pages (GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA)
   - Site internet : [https://pages.github.com](https://pages.github.com)
+- **Hébergement de la base de données & API spatiale** :
+  - Supabase Inc. (970 Folsom St, San Francisco, CA 94107, USA) pour l'infrastructure de base de données PostgreSQL / PostGIS hébergeant le catalogue des points d'intérêt patrimoniaux et traitant les requêtes spatiales de recherche de façon éphémère.
+  - Site internet : [https://supabase.com](https://supabase.com)
 - **Régie publicitaire & Gestion du consentement** :
   - Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irlande) pour Google AdMob et la plateforme Google UMP (User Messaging Platform / CMP).
 

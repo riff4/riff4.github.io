@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Airtourer - Mentions Légales & Politique de Confidentialité</title>
-  <meta name="description" content="Mentions légales et Politique de confidentialité de l'application mobile Airtourer. Information sur le respect du RGPD, l'usage éphémère du GPS, le stockage local chiffré SecureStore et la gestion du consentement publicitaire Google UMP.">
+  <meta name="description" content="Mentions légales et Politique de confidentialité de l'application mobile Airtourer. Information sur le respect du RGPD, le traitement éphémère du GPS (Supabase PostGIS), le stockage local chiffré SecureStore et la gestion du consentement publicitaire Google UMP.">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="base_logo.png">
@@ -614,12 +614,12 @@
         <span class="badge badge-success"><i class="fa-solid fa-shield-halved"></i> RGPD Conforme</span>
         <span class="badge badge-primary"><i class="fa-solid fa-lock"></i> Stockage Local Sécurisé (SecureStore)</span>
         <span class="badge"><i class="fa-solid fa-user-xmark"></i> Zéro Compte Requis</span>
-        <span class="badge badge-primary"><i class="fa-solid fa-location-crosshairs"></i> GPS Éphémère (Sans Stockage)</span>
+        <span class="badge badge-primary"><i class="fa-solid fa-location-crosshairs"></i> GPS Éphémère (Sans Stockage / RAM)</span>
         <span class="badge badge-accent"><i class="fa-brands fa-google"></i> Google UMP / AdMob</span>
       </div>
       <h1 class="hero-title">Mentions Légales & Protection des Données</h1>
       <p class="hero-desc">
-        Transparence complète concernant l'application mobile <strong>Airtourer</strong>, son modèle sans compte respectueux de la vie privée, le traitement local éphémère de la géolocalisation, les annonces récompensées et la gestion du consentement publicitaire via Google UMP.
+        Transparence complète concernant l'application mobile <strong>Airtourer</strong>, son modèle sans compte respectueux de la vie privée, le traitement éphémère de la géolocalisation (requêtes spatiales sécurisées sans aucune journalisation), les annonces récompensées et la gestion du consentement publicitaire via Google UMP.
       </p>
     </section>
 
@@ -662,7 +662,7 @@
               <div class="feature-card-icon"><i class="fa-solid fa-map-location-dot"></i></div>
               <span>Carte & Guidage interactif</span>
             </div>
-            <p>Calcul en temps réel de la distance jusqu'aux points d'intérêt (POI) et guidage pas-à-pas sur la carte interactive lors de vos déplacements.</p>
+            <p>Calculs de distance en direct en mémoire vive (RAM) et requêtes spatiales éphémères sécurisées vers Supabase PostGIS pour afficher les monuments et vous guider pas-à-pas.</p>
           </div>
 
           <div class="feature-card">
@@ -670,7 +670,7 @@
               <div class="feature-card-icon"><i class="fa-solid fa-headphones"></i></div>
               <span>Guides audio en arrière-plan</span>
             </div>
-            <p>Écoutez des explications audio immersives en toute liberté, même lorsque votre écran est verrouillé ou que l'application est réduite en arrière-plan.</p>
+            <p>Écoutez des explications audio immersives en toute liberté, même lorsque votre écran est verrouillé ou que l'application est réduite en arrière-plan (FOREGROUND_SERVICE_MEDIA_PLAYBACK).</p>
           </div>
 
           <div class="feature-card">
@@ -726,7 +726,10 @@
         <p>Les infrastructures et services associés au fonctionnement de l'application et du présent site sont fournis par :</p>
         <ul>
           <li>
-            <strong>Hébergement du site d'information :</strong> GitHub Pages (GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA).
+            <strong>Hébergement du site d'information :</strong> GitHub Pages (GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). Site web : <a href="https://pages.github.com" target="_blank" rel="noopener">https://pages.github.com</a>
+          </li>
+          <li>
+            <strong>Hébergement de la base de données & API spatiale :</strong> Supabase Inc. (970 Folsom St, San Francisco, CA 94107, USA) pour l'infrastructure PostgreSQL / PostGIS hébergeant le catalogue des points d'intérêt patrimoniaux et traitant les requêtes spatiales de recherche de façon éphémère. Site web : <a href="https://supabase.com" target="_blank" rel="noopener">https://supabase.com</a>
           </li>
           <li>
             <strong>Régie publicitaire & Gestion du consentement :</strong> Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irlande) pour Google AdMob et la plateforme Google UMP (User Messaging Platform / CMP).
@@ -785,42 +788,43 @@
           <li><strong>Contact / DPO :</strong> <span class="info-tag">ai.audiotourer@gmail.com</span></li>
         </ul>
 
-        <h2><i class="fa-solid fa-location-dot"></i> 2. Géolocalisation & Données GPS</h2>
+        <h2><i class="fa-solid fa-location-dot"></i> 2. Traitement des Données de Géolocalisation & Requêtes Serveur (Traitement éphémère)</h2>
         
         <div class="highlight-box">
-          <p><strong><i class="fa-solid fa-circle-check"></i> Engagements stricts sur la localisation :</strong></p>
+          <p><strong><i class="fa-solid fa-circle-check"></i> Engagements stricts et transparence sur la géolocalisation :</strong></p>
           <ul>
-            <li><strong>Usage exclusif en temps réel (éphémère) :</strong> La position GPS de votre appareil est utilisée uniquement lorsque vous consultez la carte pour <strong>calculer en direct la distance jusqu'aux points d'intérêt (POI)</strong> touristiques et <strong>fournir le guidage pas-à-pas d'itinéraire</strong> sur la carte interactive.</li>
-            <li><strong>Traitement 100% en mémoire locale (RAM) :</strong> Vos coordonnées GPS sont traitées exclusivement dans la mémoire vive de votre appareil. Elles ne sont <strong>JAMAIS enregistrées sur des serveurs distants</strong>, ni journalisées (logs), ni transmises, ni partagées, ni vendues à des tiers.</li>
-            <li><strong>Aucune localisation en arrière-plan :</strong> L'application <strong>ne demande PAS et n'utilise PAS</strong> l'autorisation de localisation en arrière-plan (<em>Background Location</em>). Dès que l'application est fermée ou mise en arrière-plan, la lecture du GPS est immédiatement arrêtée.</li>
-            <li><strong>Contrôle utilisateur total :</strong> Vous pouvez autoriser ou refuser l'accès GPS lors du lancement de l'application, ou modifier cette autorisation à tout instant dans les paramètres système de votre smartphone. Même sans GPS, vous conservez l'accès à la consultation des fiches POI et aux audioguides.</li>
+            <li><strong>Traitement local en temps réel (RAM de l'appareil) :</strong> Le suivi continu de votre position (affichage du point bleu sur la carte interactive, calculs de distance en direct pour le guidage pas-à-pas, boussole d'orientation) s'exécute exclusivement dans la mémoire vive (RAM) de votre smartphone.</li>
+            <li><strong>Requêtes de recherche éphémères (HTTPS / TLS) :</strong> Lorsque vous recherchez les points d'intérêt (POI) autour de vous ou que vous déplacez la carte, les coordonnées géographiques du centre de la zone visualisée et le rayon de recherche sont transmis de manière strictement éphémère via une connexion sécurisée et chiffrée (HTTPS / TLS) à notre base de données hébergée (<strong>Supabase / PostgreSQL PostGIS</strong>). Cette transmission a pour unique finalité d'interroger l'index spatial pour renvoyer la liste des monuments et audioguides correspondants.</li>
+            <li><strong>Aucune conservation / Aucun historique / Suppression immédiate :</strong> Ces coordonnées ne sont <strong>JAMAIS enregistrées sur le serveur</strong>, ni journalisées dans des fichiers de logs, ni associées à un compte utilisateur (aucun compte n'existe dans l'application), ni cédées ou revendues à des tiers. Dès que la requête SQL est exécutée et le résultat renvoyé, les coordonnées sont immédiatement supprimées de la mémoire serveur. Ce traitement répond pleinement à la définition d'un traitement « éphémère » (<em>ephemeral processing</em>) au sens de la fiche de sécurité des données Google Play (<em>Data Safety</em>).</li>
+            <li><strong>Aucune localisation en arrière-plan :</strong> L'application n'utilise pas et ne demande pas la permission d'accès à la position en arrière-plan (<code>ACCESS_BACKGROUND_LOCATION</code>). Dès que l'application est en arrière-plan ou fermée, toute lecture du signal GPS s'arrête immédiatement.</li>
+            <li><strong>Contrôle et liberté de l'utilisateur :</strong> Vous pouvez autoriser ou refuser l'accès à la position GPS lors du lancement de l'application ou à tout moment dans les réglages système de votre smartphone. Le refus de la géolocalisation n'empêche pas l'accès aux fiches des POI et aux audioguides.</li>
           </ul>
         </div>
 
         <h2><i class="fa-solid fa-key"></i> 3. Absence de Compte & Stockage Local Sécurisé (SecureStore)</h2>
         <p>
-          Pour maximiser la protection de votre vie privée, <strong>Airtourer</strong> applique le principe de minimisation des données :
+          Pour maximiser la protection de votre vie privée, <strong>Airtourer</strong> applique le principe de minimisation des données (<em>Privacy by Design</em>) :
         </p>
         <ul>
-          <li><strong>Zéro compte requis :</strong> Aucune création de compte, inscription, saisie d'adresse email, de nom ou de mot de passe n'est exigée pour utiliser l'application.</li>
-          <li><strong>Stockage local chiffré (SecureStore) :</strong> Les seules données nécessaires au bon fonctionnement de l'application sont stockées localement sur votre smartphone via un mécanisme de stockage chiffré et sécurisé (<em>SecureStore</em>). Cela concerne :
+          <li><strong>Zéro inscription / Zéro compte requis :</strong> Aucune création de compte, inscription, saisie d'adresse email, de nom ou de mot de passe n'est exigée pour utiliser l'application.</li>
+          <li><strong>Stockage local chiffré (SecureStore) :</strong> Les seules données d'état nécessaires au bon fonctionnement de l'application sont stockées localement sur votre smartphone via un mécanisme de stockage chiffré et sécurisé (<em>SecureStore</em>). Cela concerne :
             <ul>
               <li>Le solde de jetons / crédits d'écoute audio gratuits ;</li>
-              <li>La liste des identifiants (IDs) de POI débloqués par l'utilisateur ;</li>
+              <li>La liste des identifiants (IDs) de points d'intérêt (POI) débloqués par l'utilisateur ;</li>
               <li>Les préférences linguistiques de l'interface et des guides audio.</li>
             </ul>
           </li>
-          <li>Ces données restent cantonnées à votre terminal et ne sont jamais téléversées sur des serveurs externes.</li>
+          <li>Ces données restent cantonnées à votre terminal et ne sont jamais transmises à des serveurs distants.</li>
         </ul>
 
-        <h2><i class="fa-solid fa-rectangle-ad"></i> 4. Publicité & Gestion du Consentement (Google AdMob & UMP CMP)</h2>
+        <h2><i class="fa-solid fa-rectangle-ad"></i> 4. Publicité & Gestion du Consentement (Google AdMob & Google UMP)</h2>
         <p>
-          L'application <strong>Airtourer</strong> propose un modèle d'accès gratuit financé par des annonces vidéo récompensées :
+          L'application <strong>Airtourer</strong> propose un modèle d'accès gratuit respectueux financé par des annonces vidéo récompensées :
         </p>
         <ul>
           <li><strong>Annonces vidéo récompensées AdMob :</strong> Les utilisateurs ont la possibilité de visionner une courte vidéo publicitaire fournie par Google AdMob pour obtenir <strong>5 crédits d'écoute audio gratuits</strong> par vidéo regardée.</li>
-          <li><strong>Consentement conforme RGPD (Google UMP) :</strong> Pour les utilisateurs résidant dans l'Union Européenne (UE), l'Espace Économique Européen (EEE) et au Royaume-Uni (UK), le recueil du consentement publicitaire est opéré de manière transparente via la plateforme <strong>Google UMP (User Messaging Platform)</strong>, une plateforme de gestion du consentement (CMP) certifiée par l'IAB Transparency and Consent Framework (TCF).</li>
-          <li><strong>Révocation et modification faciles :</strong> Vous pouvez à tout moment revoir, modifier ou révoquer vos choix de consentement publicitaire en vous rendant dans l'écran <strong>« Paramètres » (Settings)</strong> de l'application Airtourer.</li>
+          <li><strong>Consentement conforme RGPD (Google UMP) :</strong> Pour les utilisateurs résidant dans l'Union Européenne (UE), l'Espace Économique Européen (EEE) et au Royaume-Uni (UK), le recueil du consentement publicitaire est opéré de manière transparente via la plateforme <strong>Google UMP (User Messaging Platform)</strong>, une plateforme de gestion du consentement (CMP) certifiée conforme aux exigences du RGPD et au standard IAB TCF.</li>
+          <li><strong>Révocation et modification à tout moment :</strong> Vous pouvez à tout moment revoir, modifier ou révoquer vos choix de consentement publicitaire en vous rendant dans l'écran <strong>« Paramètres » (Settings)</strong> de l'application Airtourer.</li>
         </ul>
 
         <h2><i class="fa-solid fa-headphones"></i> 5. Lecture Audio en Arrière-plan (Foreground Service)</h2>
@@ -828,17 +832,31 @@
           L'application utilise l'autorisation de service d'avant-plan Android <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code> :
         </p>
         <ul>
-          <li><strong>Finalité stricte :</strong> Cette autorisation est utilisée <strong>exclusivement pour la lecture multimédia</strong> (lecture des guides audio).</li>
-          <li><strong>Bénéfice utilisateur :</strong> Elle vous permet de continuer à écouter l'audioguide lorsque vous verrouillez l'écran de votre smartphone ou lorsque vous naviguez sur une autre application pendant votre visite.</li>
-          <li><strong>Aucun détournement :</strong> Ce service ne réalise aucune collecte de données, aucun enregistrement sonore et aucun relevé de position GPS en arrière-plan.</li>
+          <li><strong>Finalité stricte :</strong> Cette autorisation est utilisée <strong>exclusivement pour la lecture multimédia</strong> (lecture continue des guides audio).</li>
+          <li><strong>Bénéfice utilisateur :</strong> Elle vous permet de continuer à écouter l'audioguide lorsque vous verrouillez l'écran de votre smartphone ou lorsque l'application est réduite en arrière-plan pendant votre visite.</li>
+          <li><strong>Aucun détournement :</strong> Ce service ne réalise aucune collecte de données personnelles, aucun enregistrement sonore et aucun relevé de position GPS en arrière-plan.</li>
         </ul>
 
-        <h2><i class="fa-solid fa-hand-holding-hand"></i> 6. Vos Droits (Conformité RGPD)</h2>
+        <h2><i class="fa-solid fa-server"></i> 6. Destinataires et Sous-traitants</h2>
+        <p>Vos données personnelles ne sont <strong>jamais vendues, louées ou cédées</strong> à des tiers à des fins commerciales. Les prestataires techniques intervenant pour le service sont :</p>
+        <ul>
+          <li><strong>Supabase Inc. :</strong> Pour l'hébergement de la base de données (PostgreSQL / PostGIS) distribuant le catalogue des points d'intérêt et traitant de manière éphémère les requêtes spatiales de recherche de POI via HTTPS/TLS.</li>
+          <li><strong>Google Ireland Limited :</strong> Pour la diffusion des publicités vidéo récompensées (Google AdMob) et la gestion du consentement réglementaire (Google UMP CMP).</li>
+          <li><strong>GitHub Pages (GitHub, Inc.) :</strong> Pour l'hébergement du site statique d'information légale.</li>
+        </ul>
+
+        <h2><i class="fa-solid fa-hourglass-half"></i> 7. Durée de Conservation des Données</h2>
+        <ul>
+          <li><strong>Données de géolocalisation & requêtes de recherche de POI :</strong> <strong>0 seconde</strong> (traitement en temps réel volatil en mémoire RAM sur le smartphone et traitement éphémère en mémoire vive sur le serveur PostgreSQL uniquement pendant l'exécution de la requête spatiale ; aucune conservation sur disque, aucun historique, aucune journalisation).</li>
+          <li><strong>Données locales (SecureStore) :</strong> Conservées sur votre appareil jusqu'à la réinitialisation des données de l'application ou sa désinstallation.</li>
+        </ul>
+
+        <h2><i class="fa-solid fa-hand-holding-hand"></i> 8. Vos Droits (Conformité RGPD)</h2>
         <p>
           Conformément au Règlement Général sur la Protection des Données (RGPD - Règlement UE 2016/679), vous bénéficiez des droits suivants :
         </p>
         <ul>
-          <li><strong>Droit d'accès et d'information</strong> (Art. 15 RGPD) : Être informé des données traitées.</li>
+          <li><strong>Droit d'accès et d'information</strong> (Art. 15 RGPD) : Connaître les traitements appliqués.</li>
           <li><strong>Droit à l'effacement</strong> (Art. 17 RGPD) : Supprimer vos données locales en réinitialisant les données de l'application ou en la désinstallant de votre appareil.</li>
           <li><strong>Droit d'opposition et de retrait du consentement</strong> (Art. 21 RGPD) : Modifier vos autorisations GPS dans les paramètres du système d'exploitation et vos choix publicitaires via l'écran Paramètres de l'application.</li>
         </ul>
@@ -850,16 +868,16 @@
           <p>En cas de désaccord persistant, vous pouvez saisir la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés - <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>).</p>
         </div>
 
-        <h2><i class="fa-solid fa-store"></i> 7. Conformité aux Directives des Stores (Google Play & Apple App Store)</h2>
+        <h2><i class="fa-solid fa-store"></i> 9. Conformité aux Directives des Stores (Google Play & Apple App Store)</h2>
         <p>
           La présente politique est rédigée en conformité stricte avec :
         </p>
         <ul>
-          <li>Les règles relatives aux données utilisateur de <strong>Google Play</strong> (Google Play User Data Policy, déclaration de permissions Media Playback, transparence UMP CMP).</li>
-          <li>Les recommandations de confidentialité d'<strong>Apple</strong> (App Store Privacy Guidelines, minimisation des données, transparence de la géolocalisation).</li>
+          <li><strong>Google Play User Data Policy :</strong> Déclaration transparente de la localisation éphémère (<em>Ephemeral Processing</em> sans stockage ni journalisation dans la section Sécurité des données / <em>Data Safety</em>), déclaration de la permission <em>Foreground Service Media Playback</em>, conformité Google UMP / CMP pour la publicité, absence de géolocalisation en arrière-plan (<code>ACCESS_BACKGROUND_LOCATION</code> non utilisée).</li>
+          <li><strong>Apple App Store Privacy Guidelines :</strong> Usage transparent du GPS en direct sans tracking IDFA, absence de profilage, respect strict de la vie privée.</li>
         </ul>
 
-        <h2><i class="fa-solid fa-pen-to-square"></i> 8. Modifications de la Politique</h2>
+        <h2><i class="fa-solid fa-pen-to-square"></i> 10. Modifications de la Politique</h2>
         <p>
           Cette Politique de Confidentialité peut être mise à jour pour refléter d'éventuelles évolutions fonctionnelles ou légales. La date de dernière mise à jour sera actualisée en en-tête du document.
         </p>
@@ -924,9 +942,9 @@
 
     // Copy Raw Markdown for Notion / GitHub / Stores
     const rawMarkdown = {
-      apropos: `# À Propos de Airtourer\n\nAirtourer est une application mobile d'audioguide touristique géolocalisé. Explorez le patrimoine culturel à votre rythme grâce à des commentaires audio immersifs et des parcours interactifs.\n\n## Fonctionnalités principales\n- **Carte & Guidage interactif** : Calcul en temps réel de la distance jusqu'aux points d'intérêt (POI) et guidage étape par étape.\n- **Écoute audio en arrière-plan** : Lecture continue des audioguides même écran verrouillé ou application en arrière-plan (FOREGROUND_SERVICE_MEDIA_PLAYBACK).\n- **Crédits gratuits via Google AdMob** : 5 crédits offerts par vidéo récompensée visionnée.\n- **Vie privée & Zéro compte** : Aucun compte ni email requis. Stockage local chiffré dans SecureStore (solde de crédits, POI débloqués, langue).\n- **Gestion du consentement UMP** : Contrôle et révocation du consentement publicitaire à tout moment dans les Paramètres.\n- **GPS éphémère** : Aucun stockage distant de vos coordonnées GPS, aucune localisation en arrière-plan.\n\nContact : ai.audiotourer@gmail.com | Éditeur : Airtourer, Lille, France`,
-      mentions: `# Mentions Légales - Airtourer\n\n*En vigueur au : 15/08/2026*\n\n## 1. Éditeur du service\nL'application mobile **Airtourer** est éditée par :\n- **Éditeur / Développeur** : Airtourer\n- **Localisation** : Lille, France\n- **Adresse email de contact / Support** : ai.audiotourer@gmail.com\n- **Directeur de la publication** : Airtourer\n\n## 2. Hébergement & Services Tiers\n- **Site d'information** : GitHub Pages (GitHub, Inc., San Francisco, CA, USA)\n- **Publicité & CMP** : Google Ireland Limited (Google AdMob & Google UMP)\n\n## 3. Propriété Intellectuelle\nL'ensemble du contenu (textes, audios, logos, code source) est la propriété exclusive d'Airtourer.\n\n## 4. Conditions d'accès\nApplication accessible sur Apple App Store et Google Play Store.\n\n## 5. Limitation de responsabilité\nInformations fournies à titre indicatif. L'utilisateur demeure seul responsable de sa sécurité lors de ses déplacements.\n\n## 6. Droit applicable\nDroit français.`,
-      confidentialite: `# Politique de Confidentialité - Airtourer\n\n*Dernière mise à jour : 15/08/2026*\n\n## 1. Responsable du Traitement\n- **Éditeur** : Airtourer\n- **Localisation** : Lille, France\n- **Email de contact / DPO** : ai.audiotourer@gmail.com\n\n## 2. Géolocalisation & Données GPS\n- **Usage exclusif en temps réel (éphémère)** : Calcul de la distance aux points d'intérêt (POI) touristiques et guidage pas-à-pas sur la carte interactive.\n- **Traitement 100% en mémoire locale (RAM)** : Coordonnées GPS JAMAIS stockées sur des serveurs distants, ni journalisées, ni partagées/vendues à des tiers.\n- **Aucune localisation en arrière-plan** : L'application ne demande PAS d'accès GPS en arrière-plan.\n- **Désactivation possible** à tout moment dans les réglages système du smartphone.\n\n## 3. Absence de Compte & Stockage Local Sécurisé (SecureStore)\n- **Zéro compte requis** : Aucune création de compte, adresse email ou mot de passe demandés.\n- **Stockage chiffré local (SecureStore)** : Solde de jetons/crédits d'écoute, identifiants de POI débloqués et préférences de langue sont stockés uniquement sur votre appareil.\n\n## 4. Publicité & Gestion du Consentement (Google AdMob & Google UMP)\n- **Vidéos récompensées AdMob** : Visionnage d'annonces récompensées pour obtenir 5 crédits d'écoute gratuits par vidéo.\n- **Consentement RGPD via Google UMP** : Plateforme CMP certifiée pour les utilisateurs de l'UE/UK/EEE.\n- **Gestion des préférences** : Possibilité de modifier ou révoquer son consentement publicitaire à tout moment dans l'écran « Paramètres » de l'application.\n\n## 5. Lecture Audio en Arrière-plan (Foreground Service)\n- Permission \`FOREGROUND_SERVICE_MEDIA_PLAYBACK\` utilisée strictement pour permettre la lecture audio avec écran verrouillé ou application minimisée.\n\n## 6. Vos Droits (RGPD)\nAccès, effacement (via réinitialisation/désinstallation), retrait du consentement. Contact : ai.audiotourer@gmail.com. Réclamation CNIL : www.cnil.fr.\n\n## 7. Conformité Stores\nConforme aux règles Google Play User Data Policy et Apple App Store Privacy Guidelines.`
+      apropos: `# À Propos de Airtourer\n\nAirtourer est une application mobile d'audioguide touristique géolocalisé. Explorez le patrimoine culturel à votre rythme grâce à des commentaires audio immersifs et des parcours interactifs.\n\n## Fonctionnalités principales\n- **Carte & Guidage interactif** : Suivi en temps réel en mémoire vive (RAM) et requêtes spatiales éphémères sécurisées vers Supabase PostGIS pour afficher les monuments et guider pas-à-pas.\n- **Écoute audio en arrière-plan** : Lecture continue des audioguides même écran verrouillé ou application en arrière-plan (FOREGROUND_SERVICE_MEDIA_PLAYBACK).\n- **Crédits gratuits via Google AdMob** : 5 crédits offerts par vidéo récompensée visionnée.\n- **Vie privée & Zéro compte** : Aucun compte ni email requis. Stockage local chiffré dans SecureStore (solde de crédits, POI débloqués, langue).\n- **Gestion du consentement UMP** : Contrôle et révocation du consentement publicitaire à tout moment dans les Paramètres.\n- **GPS éphémère** : Requêtes éphémères chiffrées (HTTPS/TLS) sans conservation ni journalisation (0s), aucune localisation en arrière-plan.\n\nContact : ai.audiotourer@gmail.com | Éditeur : Airtourer, Lille, France`,
+      mentions: `# Mentions Légales - Airtourer\n\n*En vigueur au : 15/08/2026*\n\n## 1. Éditeur du service\nL'application mobile **Airtourer** est éditée par :\n- **Éditeur / Développeur** : Airtourer\n- **Localisation** : Lille, France\n- **Adresse email de contact / Support** : ai.audiotourer@gmail.com\n- **Directeur de la publication** : Airtourer\n\n## 2. Hébergement & Services Tiers\n- **Site d'information** : GitHub Pages (GitHub, Inc., San Francisco, CA, USA)\n- **Base de données & API spatiale** : Supabase Inc. (PostgreSQL / PostGIS, San Francisco, CA, USA)\n- **Publicité & CMP** : Google Ireland Limited (Google AdMob & Google UMP)\n\n## 3. Propriété Intellectuelle\nL'ensemble du contenu (textes, audios, logos, code source) est la propriété exclusive d'Airtourer.\n\n## 4. Conditions d'accès\nApplication accessible sur Apple App Store et Google Play Store.\n\n## 5. Limitation de responsabilité\nInformations fournies à titre indicatif. L'utilisateur demeure seul responsable de sa sécurité lors de ses déplacements.\n\n## 6. Droit applicable\nDroit français.`,
+      confidentialite: `# Politique de Confidentialité - Airtourer\n\n*Dernière mise à jour : 15/08/2026*\n\n## 1. Responsable du Traitement\n- **Éditeur** : Airtourer\n- **Localisation** : Lille, France\n- **Email de contact / DPO** : ai.audiotourer@gmail.com\n\n## 2. Traitement des Données de Géolocalisation & Requêtes Serveur (Traitement éphémère)\n- **Traitement local en temps réel (RAM)** : Suivi continu, boussole et calculs de distance pour guidage pas-à-pas exécutés exclusivement dans la mémoire vive du smartphone.\n- **Requêtes de recherche éphémères (HTTPS/TLS)** : Transmission temporaire des coordonnées du centre et rayon à Supabase PostgreSQL PostGIS dans le seul but de renvoyer la liste des POIs correspondants.\n- **Zéro conservation / Zéro historique** : Coordonnées JAMAIS enregistrées sur le serveur, ni journalisées dans des logs, non associées à un compte (aucun compte), purgées dès l'exécution SQL. Conforme à la définition de traitement éphémère Google Play Data Safety.\n- **Aucune localisation en arrière-plan** : L'application n'utilise pas la permission \`ACCESS_BACKGROUND_LOCATION\`.\n- **Désactivation possible** à tout moment dans les réglages système du smartphone.\n\n## 3. Absence de Compte & Stockage Local Sécurisé (SecureStore)\n- **Zéro compte requis** : Aucune création de compte, adresse email ou mot de passe demandés.\n- **Stockage chiffré local (SecureStore)** : Solde de jetons/crédits d'écoute, identifiants de POI débloqués et préférences de langue sont stockés uniquement sur votre appareil.\n\n## 4. Publicité & Gestion du Consentement (Google AdMob & Google UMP)\n- **Vidéos récompensées AdMob** : Visionnage d'annonces récompensées pour obtenir 5 crédits d'écoute gratuits par vidéo.\n- **Consentement RGPD via Google UMP** : Plateforme CMP certifiée pour les utilisateurs de l'UE/UK/EEE.\n- **Gestion des préférences** : Possibilité de modifier ou révoquer son consentement publicitaire à tout moment dans l'écran « Paramètres » de l'application.\n\n## 5. Lecture Audio en Arrière-plan (Foreground Service)\n- Permission \`FOREGROUND_SERVICE_MEDIA_PLAYBACK\` utilisée strictement pour permettre la lecture audio avec écran verrouillé ou application minimisée.\n\n## 6. Destinataires et Sous-traitants\n- Supabase Inc. (Base de données PostgreSQL / PostGIS pour requêtes éphémères de POI)\n- Google Ireland Limited (Google AdMob & Google UMP)\n- GitHub Pages (Hébergement du site)\n\n## 7. Durée de Conservation\n- Géolocalisation & Requêtes POI : 0 seconde (traitement volatil en RAM / éphémère sur serveur)\n- Données locales : Jusqu'à réinitialisation ou désinstallation de l'app.\n\n## 8. Vos Droits (RGPD)\nAccès, effacement (via réinitialisation/désinstallation), retrait du consentement. Contact : ai.audiotourer@gmail.com. Réclamation CNIL : www.cnil.fr.\n\n## 9. Conformité Stores\nConforme aux règles Google Play User Data Policy (Data Safety) et Apple App Store Privacy Guidelines.`
     };
 
     function copyTabMarkdown(tabKey) {

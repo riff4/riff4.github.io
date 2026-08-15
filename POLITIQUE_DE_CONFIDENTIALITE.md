@@ -18,13 +18,14 @@ Le traitement des données personnelles dans le cadre de l'application est effec
 
 ---
 
-## 2. Traitement des Données de Géolocalisation & GPS
+## 2. Traitement des Données de Géolocalisation & Requêtes Serveur (Traitement éphémère)
 
-L'accès à la position de votre appareil est encadré par des règles de confidentialité strictes et transparentes :
+L'accès à la position géographique de votre appareil est encadré par des règles techniques et juridiques de confidentialité strictes et transparentes :
 
-- **Usage exclusif en temps réel (éphémère)** : La position GPS de votre appareil est utilisée uniquement en direct pour **calculer la distance jusqu'aux points d'intérêt (POI)** touristiques et **fournir le guidage pas-à-pas d'itinéraire** sur la carte interactive.
-- **Traitement 100% en mémoire locale (RAM)** : Vos coordonnées GPS sont traitées exclusivement dans la mémoire vive de votre appareil. Elles ne sont **JAMAIS enregistrées sur des serveurs distants**, ni journalisées (logs), ni transmises, ni partagées ou vendues à des tiers.
-- **Aucune localisation en arrière-plan** : L'application **ne demande PAS et n'utilise PAS** l'autorisation de localisation en arrière-plan (*Background Location*). Dès que l'application est en arrière-plan ou fermée, toute lecture du signal GPS s'arrête immédiatement.
+- **Traitement local en temps réel (RAM de l'appareil)** : Le suivi continu de votre position (affichage du point bleu sur la carte interactive, calculs de distance en direct pour le guidage pas-à-pas, boussole d'orientation) s'exécute exclusivement dans la mémoire vive (RAM) de votre smartphone.
+- **Requêtes de recherche éphémères (HTTPS / TLS)** : Lorsque vous recherchez les points d'intérêt (POI) autour de vous ou que vous déplacez la carte, les coordonnées géographiques du centre de la zone visualisée et le rayon de recherche sont transmis de manière strictement éphémère via une connexion sécurisée et chiffrée (HTTPS / TLS) à notre base de données hébergée (**Supabase / PostgreSQL PostGIS**). Cette transmission a pour unique finalité d'interroger l'index spatial pour renvoyer la liste des monuments et audioguides correspondants.
+- **Aucune conservation / Aucun historique / Suppression immédiate** : Ces coordonnées ne sont **JAMAIS enregistrées sur le serveur**, ni journalisées dans des fichiers de logs, ni associées à un compte utilisateur (aucun compte n'existe dans l'application), ni cédées ou revendues à des tiers. Dès que la requête SQL est exécutée et le résultat renvoyé, les coordonnées sont immédiatement supprimées de la mémoire serveur. Ce traitement répond pleinement à la définition d'un traitement « éphémère » (*ephemeral processing*) au sens de la fiche de sécurité des données Google Play (*Data Safety*).
+- **Aucune localisation en arrière-plan** : L'application n'utilise pas et ne demande pas la permission d'accès à la position en arrière-plan (`ACCESS_BACKGROUND_LOCATION`). Dès que l'application est en arrière-plan ou fermée, toute lecture du signal GPS s'arrête immédiatement.
 - **Contrôle et liberté de l'utilisateur** : Vous pouvez autoriser ou refuser l'accès à la position GPS lors du lancement de l'application ou à tout moment dans les réglages système de votre smartphone. Le refus de la géolocalisation n'empêche pas l'accès aux fiches des POI et aux audioguides.
 
 ---
@@ -54,7 +55,7 @@ L'application intègre un modèle de monétisation respectueux via des vidéos r
 
 ## 5. Lecture Audio en Arrière-plan (Foreground Service)
 
-- **Autorisation `FOREGROUND_SERVICE_MEDIA_PLAYBACK`** : L'application utilise cette autorisation Android strictly pour la lecture multimédia.
+- **Autorisation `FOREGROUND_SERVICE_MEDIA_PLAYBACK`** : L'application utilise cette autorisation Android strictement pour la lecture multimédia.
 - **Finalité** : Permettre aux utilisateurs de continuer à écouter leurs guides audio lorsque l'écran de leur smartphone est éteint/verrouillé ou lorsque l'application est réduite en arrière-plan pendant la visite.
 - Ce service d'avant-plan ne réalise aucun traçage GPS ni aucune collecte de données personnelles.
 
@@ -65,6 +66,7 @@ L'application intègre un modèle de monétisation respectueux via des vidéos r
 Vos données personnelles ne sont **jamais vendues, louées ou cédées** à des tiers à des fins commerciales.
 
 Les prestataires techniques intervenant pour le fonctionnement du service sont :
+- **Supabase Inc.** : Pour l'hébergement de la base de données (PostgreSQL / PostGIS) distribuant le catalogue des points d'intérêt et traitant de manière éphémère les requêtes spatiales de recherche de POI via HTTPS/TLS.
 - **Google Ireland Limited** : Pour la diffusion des publicités vidéo récompensées (Google AdMob) et la gestion du consentement réglementaire (Google UMP).
 - **GitHub Pages** (GitHub, Inc.) : Pour l'hébergement du site statique d'information légale.
 
@@ -72,7 +74,7 @@ Les prestataires techniques intervenant pour le fonctionnement du service sont :
 
 ## 7. Durée de Conservation des Données
 
-- **Données de géolocalisation GPS** : **0 seconde** (traitement en temps réel volatil en mémoire RAM uniquement, aucune conservation).
+- **Données de géolocalisation & requêtes de recherche de POI** : **0 seconde** (traitement en temps réel volatil en mémoire RAM sur le smartphone et traitement éphémère en mémoire vive sur le serveur PostgreSQL uniquement pendant l'exécution de la requête spatiale ; aucune conservation sur disque, aucun historique, aucune journalisation).
 - **Données locales (SecureStore)** : Conservées sur votre appareil jusqu'à la réinitialisation des données de l'application ou sa désinstallation.
 
 ---
@@ -82,7 +84,7 @@ Les prestataires techniques intervenant pour le fonctionnement du service sont :
 Conformément à la réglementation européenne sur la protection des données, vous disposez des droits suivants :
 
 - **Droit d'accès et d'information** (Art. 15 RGPD) : Connaître les traitements appliqués.
-- **Droit à l'effacement** (Art. 17 RGPD) : Supprimer définitivement vos données locales par simple désinstallation de l'application.
+- **Droit à l'effacement** (Art. 17 RGPD) : Supprimer définitivement vos données locales par simple réinitialisation ou désinstallation de l'application.
 - **Droit de retrait du consentement** (Art. 21 RGPD) : Modifier vos préférences GPS dans les réglages système de votre téléphone et vos choix de consentement publicitaire dans l'écran Paramètres de l'application.
 
 ### Exercer vos droits
@@ -100,8 +102,8 @@ Site internet : [https://www.cnil.fr](https://www.cnil.fr)
 ## 9. Conformité aux Guides des Stores (Apple App Store & Google Play Store)
 
 Cette Politique de Confidentialité répond intégralement aux exigences des magasins d'applications :
-- **Apple App Store Privacy Guidelines** : Usage transparent du GPS en temps réel sans tracking IDFA, absence de profilage abusif, respect strict de la vie privée.
-- **Google Play User Data Policy** : Déclaration transparente de la permission Foreground Service Media Playback, conformité Google UMP / CMP pour la publicité, absence de géolocalisation en arrière-plan.
+- **Apple App Store Privacy Guidelines** : Usage transparent du GPS en direct sans tracking IDFA, absence de profilage, respect strict de la vie privée.
+- **Google Play User Data Policy** : Déclaration transparente de la localisation éphémère (*Ephemeral Processing* sans stockage ni journalisation dans la section Sécurité des données / *Data Safety*), déclaration de la permission *Foreground Service Media Playback*, conformité Google UMP / CMP pour la publicité, absence de géolocalisation en arrière-plan (`ACCESS_BACKGROUND_LOCATION`).
 
 ---
 

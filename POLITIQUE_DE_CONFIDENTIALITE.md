@@ -2,7 +2,7 @@
 
 *Dernière mise à jour : 15/08/2026*
 
-Nous accordons une importance fondamentale au respect de la vie privée et à la protection des données à caractère personnel des utilisateurs de notre application mobile **Airtourer**.
+Nous accordons une importance fondamentale au respect de la vie privée et à la protection des données à caractère personnel des utilisateurs de notre application mobile **AirTourer**.
 
 La présente Politique de Confidentialité détaille la manière dont vos données sont traitées, conformément au Règlement Général sur la Protection des Données (RGPD - Règlement UE 2016/679), à la Loi Informatique et Libertés du 6 janvier 1978 modifiée, ainsi qu'aux directives de confidentialité des plateformes **Apple App Store** et **Google Play Store**.
 
@@ -12,9 +12,9 @@ La présente Politique de Confidentialité détaille la manière dont vos donné
 
 Le traitement des données personnelles dans le cadre de l'application est effectué sous la responsabilité de :
 
-- **Éditeur / Développeur** : `Airtourer`
+- **Éditeur / Développeur** : `AirTourer`
 - **Localisation** : `Lille, France`
-- **Email de contact / DPO** : `ai.audiotourer@gmail.com`
+- **Email de contact / DPO** : `airtourer.app@gmail.com`
 
 ---
 
@@ -32,7 +32,7 @@ L'accès à la position géographique de votre appareil est encadré par des rè
 
 ## 3. Absence de Compte & Stockage Local Sécurisé (SecureStore)
 
-Airtourer applique une approche stricte de protection de la vie privée dès la conception (*Privacy by Design*) :
+AirTourer applique une approche stricte de protection de la vie privée dès la conception (*Privacy by Design*) :
 
 - **Zéro inscription / Zéro compte requis** : Aucun compte utilisateur, email, identifiant ou mot de passe n'est demandé pour accéder aux fonctionnalités de l'application.
 - **Stockage chiffré sur l'appareil (SecureStore)** : Les données d'état nécessaires au fonctionnement de l'application sont stockées exclusivement en local sur votre terminal dans un stockage sécurisé et chiffré (*SecureStore*). Ces données comprennent :
@@ -89,7 +89,7 @@ Conformément à la réglementation européenne sur la protection des données, 
 
 ### Exercer vos droits
 Pour toute question ou demande concernant vos données personnelles :  
-👉 **`ai.audiotourer@gmail.com`**
+👉 **`airtourer.app@gmail.com`**
 
 Délai légal de réponse maximal : **30 jours**.
 

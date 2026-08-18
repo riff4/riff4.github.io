@@ -3,12 +3,12 @@
 *En vigueur au : 15/08/2026*
 
 ## 1. Éditeur du service
-L'application mobile **Airtourer** (ci-après « l'Application ») est éditée par :
+L'application mobile **AirTourer** (ci-après « l'Application ») est éditée par :
 
-- **Éditeur / Développeur** : `Airtourer`
+- **Éditeur / Développeur** : `AirTourer`
 - **Localisation** : `Lille, France`
-- **Adresse email de contact & support** : `ai.audiotourer@gmail.com`
-- **Directeur de la publication** : `Airtourer`
+- **Adresse email de contact & support** : `airtourer.app@gmail.com`
+- **Directeur de la publication** : `AirTourer`
 
 ---
 
@@ -27,9 +27,9 @@ Les infrastructures et services associés au fonctionnement de l'application et 
 ---
 
 ## 3. Propriété Intellectuelle
-L'ensemble des éléments composant l'application **Airtourer** (incluant les textes, visuels, photographies, logos, voix, guides audio, éléments sonores, bases de données, code source, graphismes, interfaces et architecture logicielle) est protégé par les lois relatives au droit d'auteur et à la propriété intellectuelle.
+L'ensemble des éléments composant l'application **AirTourer** (incluant les textes, visuels, photographies, logos, voix, guides audio, éléments sonores, bases de données, code source, graphismes, interfaces et architecture logicielle) est protégé par les lois relatives au droit d'auteur et à la propriété intellectuelle.
 
-Toute reproduction, représentation, adaptation, modification ou exploitation totale ou partielle du contenu de l'application, par quelque procédé que ce soit, sans l'autorisation écrite préalable d'**Airtourer**, est strictement interdite et constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle.
+Toute reproduction, représentation, adaptation, modification ou exploitation totale ou partielle du contenu de l'application, par quelque procédé que ce soit, sans l'autorisation écrite préalable d'**AirTourer**, est strictement interdite et constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle.
 
 ---
 

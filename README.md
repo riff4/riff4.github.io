@@ -1,6 +1,6 @@
-# Airtourer - Site de Mentions Légales & Politique de Confidentialité
+# AirTourer - Site de Mentions Légales & Politique de Confidentialité
 
-Ce dépôt contient le site web statique et les documents juridiques (conformes RGPD, Google Play Data Safety, Apple App Store et Google UMP CMP) pour l'application mobile **Airtourer**.
+Ce dépôt contient le site web statique et les documents juridiques (conformes RGPD, Google Play Data Safety, Apple App Store et Google UMP CMP) pour l'application mobile **AirTourer**.
 
 ---
 

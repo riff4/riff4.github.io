@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Airtourer - Mentions Légales & Politique de Confidentialité</title>
-  <meta name="description" content="Mentions légales et Politique de confidentialité de l'application mobile Airtourer. Information sur le respect du RGPD, le traitement éphémère du GPS (Supabase PostGIS), le stockage local chiffré SecureStore et la gestion du consentement publicitaire Google UMP.">
+  <title>AirTourer - Mentions Légales & Politique de Confidentialité</title>
+  <meta name="description" content="Mentions légales et Politique de confidentialité de l'application mobile AirTourer. Information sur le respect du RGPD, le traitement éphémère du GPS (Supabase PostGIS), le stockage local chiffré SecureStore et la gestion du consentement publicitaire Google UMP.">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="base_logo.png">
@@ -19,58 +19,78 @@
 
   <style>
     :root {
-      /* Palette derived directly from the Airtourer Logo (Globe Azure Blue & Headphone Tangerine Orange) */
-      --primary: #0284C7;          /* Azure Globe Blue */
-      --primary-hover: #0369A1;    /* Deep Ocean Blue */
-      --primary-light: #E0F2FE;    /* Soft Sky Blue Tint */
-      --primary-glow: rgba(2, 132, 199, 0.2);
+      /* Palette AirTourer */
+      --primary: #E05A47;          /* Primary (Terracotta) - CTA, Scrubber, Pins, Liens d'action */
+      --primary-hover: #C94A38;
+      --primary-light: rgba(224, 90, 71, 0.12);
+      --primary-glow: rgba(224, 90, 71, 0.25);
       
-      --accent: #F97316;           /* Tangerine Headphone Orange */
-      --accent-hover: #EA580C;     /* Warm Amber Orange */
-      --accent-light: #FFF7ED;     /* Soft Orange Tint */
-      --accent-glow: rgba(249, 115, 22, 0.2);
+      --secondary-1: #1E3A4C;      /* Secondary 1 (Bleu Canopée) - Titres H1/H2, Contraste */
+      --secondary-1-hover: #152A37;
+      --secondary-1-light: rgba(30, 58, 76, 0.08);
 
-      --success: #16A34A;          /* Globe Green */
-      --success-light: #DCFCE7;
+      --secondary-2: #6A9A7B;      /* Secondary 2 (Vert Sauge) - Badges de validation/succès */
+      --secondary-2-hover: #568165;
+      --secondary-2-light: rgba(106, 154, 123, 0.16);
       
-      --warning: #F59E0B;
-      --warning-light: #FEF3C7;
+      --success: #6A9A7B;          /* Vert Sauge */
+      --success-light: rgba(106, 154, 123, 0.16);
+
+      --accent: #A8E0F9;           /* Accent (Bleu Toury) - Tags catégories, Fonds d'icônes */
+      --accent-hover: #8FD4F5;
+      --accent-light: rgba(168, 224, 249, 0.32);
+      --accent-glow: rgba(168, 224, 249, 0.45);
+      --accent-text: #1E3A4C;      /* Texte Bleu Canopée sur fond Bleu Toury */
+
+      --warning: #E59838;
+      --warning-light: rgba(229, 152, 56, 0.15);
       
-      --text-main: #0F172A;        /* Logo Dark Navy */
-      --text-muted: #64748B;
-      --bg-body: #F8FAFC;
-      --bg-card: #FFFFFF;
-      --border-color: #E2E8F0;
+      --text-main: #1D232A;        /* Neutral Charcoal / Body - Typographie courante */
+      --text-heading: #1E3A4C;     /* Bleu Canopée */
+      --text-muted: #627282;
+      --bg-body: #F7F5F0;          /* Neutral Sand / Canvas - Arrière-plan global */
+      --bg-card: #FFFFFF;          /* Fond de card */
+      --border-color: #EAE6DF;     /* Bordure subtile : 1px solid #EAE6DF */
       
-      --shadow-sm: 0 1px 3px 0 rgb(15 23 42 / 0.05);
-      --shadow-md: 0 4px 8px -1px rgb(15 23 42 / 0.08), 0 2px 4px -2px rgb(15 23 42 / 0.04);
-      --shadow-lg: 0 10px 22px -3px rgb(2 132 199 / 0.12), 0 4px 8px -4px rgb(249 115 22 / 0.08);
+      --shadow-sm: 0 1px 3px 0 rgb(29 35 42 / 0.04);
+      --shadow-md: 0 4px 12px -1px rgb(30 58 76 / 0.07), 0 2px 4px -2px rgb(29 35 42 / 0.03);
+      --shadow-lg: 0 12px 28px -4px rgb(30 58 76 / 0.10), 0 4px 10px -4px rgb(224 90 71 / 0.08);
       --radius: 14px;
       --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
     [data-theme="dark"] {
-      --primary: #38BDF8;          /* Luminous Sky Blue */
-      --primary-hover: #7DD3FC;
-      --primary-light: rgba(56, 189, 248, 0.14);
-      --primary-glow: rgba(56, 189, 248, 0.3);
+      --primary: #F0715F;          /* Terracotta Lumineux */
+      --primary-hover: #FFA092;
+      --primary-light: rgba(240, 113, 95, 0.18);
+      --primary-glow: rgba(240, 113, 95, 0.35);
 
-      --accent: #FB923C;           /* Luminous Tangerine Orange */
-      --accent-hover: #FDBA74;
-      --accent-light: rgba(251, 146, 60, 0.14);
-      --accent-glow: rgba(251, 146, 60, 0.3);
+      --secondary-1: #82B3CD;      /* Bleu Canopée Lumineux */
+      --secondary-1-hover: #A8D1E6;
+      --secondary-1-light: rgba(130, 179, 205, 0.18);
 
-      --success: #4ADE80;
-      --success-light: rgba(74, 222, 128, 0.14);
+      --secondary-2: #84BA96;      /* Vert Sauge Lumineux */
+      --secondary-2-hover: #A4D4B3;
+      --secondary-2-light: rgba(132, 186, 150, 0.18);
 
-      --warning: #FBBF24;
-      --warning-light: rgba(251, 191, 36, 0.14);
+      --success: #84BA96;
+      --success-light: rgba(132, 186, 150, 0.18);
 
-      --text-main: #F8FAFC;
-      --text-muted: #94A3B8;
-      --bg-body: #0A1124;          /* Deep Navy from logo */
-      --bg-card: #131F3B;          /* Oceanic Slate Card */
-      --border-color: #22355B;
+      --accent: #A8E0F9;           /* Bleu Toury */
+      --accent-hover: #C5EDFD;
+      --accent-light: rgba(168, 224, 249, 0.18);
+      --accent-glow: rgba(168, 224, 249, 0.3);
+      --accent-text: #A8E0F9;
+
+      --warning: #F5B054;
+      --warning-light: rgba(245, 176, 84, 0.18);
+
+      --text-main: #F7F5F0;        /* Neutral Sand */
+      --text-heading: #FFFFFF;
+      --text-muted: #9BB0C1;
+      --bg-body: #121A21;          /* Charcoal Profond */
+      --bg-card: #1B2631;          /* Bleu Canopée Sombre */
+      --border-color: #2D3E4E;
 
       --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.3);
       --shadow-md: 0 4px 8px -1px rgb(0 0 0 / 0.4);
@@ -129,7 +149,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      box-shadow: 0 3px 10px rgba(2, 132, 199, 0.2);
+      box-shadow: 0 3px 10px rgba(224, 90, 71, 0.18);
       border: 1.5px solid var(--border-color);
       background: var(--bg-card);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -137,7 +157,7 @@
 
     .brand:hover .brand-icon {
       transform: scale(1.05);
-      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.25);
+      box-shadow: 0 4px 14px rgba(224, 90, 71, 0.3);
     }
 
     .brand-icon img {
@@ -150,7 +170,7 @@
       font-size: 1.3rem;
       font-weight: 800;
       letter-spacing: -0.02em;
-      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      background: linear-gradient(135deg, var(--secondary-1) 0%, var(--primary) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       display: inline-block;
@@ -200,7 +220,7 @@
 
     /* Hero Banner */
     .hero-card {
-      background: linear-gradient(135deg, rgba(2, 132, 199, 0.08) 0%, rgba(249, 115, 22, 0.08) 100%);
+      background: linear-gradient(135deg, rgba(224, 90, 71, 0.08) 0%, rgba(168, 224, 249, 0.25) 100%);
       border: 1px solid var(--border-color);
       border-radius: var(--radius);
       padding: 2.25rem;
@@ -217,9 +237,9 @@
       position: absolute;
       top: -30px;
       right: -30px;
-      width: 150px;
-      height: 150px;
-      background: radial-gradient(circle, rgba(249, 115, 22, 0.12) 0%, transparent 70%);
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(224, 90, 71, 0.15) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -244,28 +264,28 @@
     }
 
     .badge-success {
-      background: var(--success-light);
-      color: var(--success);
-      border-color: rgba(22, 163, 74, 0.3);
+      background: var(--secondary-2-light);
+      color: var(--secondary-2);
+      border-color: rgba(106, 154, 123, 0.35);
     }
 
     .badge-primary {
       background: var(--primary-light);
       color: var(--primary);
-      border-color: rgba(2, 132, 199, 0.3);
+      border-color: rgba(224, 90, 71, 0.35);
     }
 
     .badge-accent {
       background: var(--accent-light);
-      color: var(--accent);
-      border-color: rgba(249, 115, 22, 0.3);
+      color: var(--accent-text);
+      border-color: rgba(168, 224, 249, 0.8);
     }
 
     .hero-title {
       font-size: 1.8rem;
       font-weight: 800;
       letter-spacing: -0.02em;
-      color: var(--text-main);
+      color: var(--secondary-1);
     }
 
     .hero-desc {
@@ -332,7 +352,7 @@
       font-size: 1.8rem;
       font-weight: 800;
       margin-bottom: 0.5rem;
-      color: var(--text-main);
+      color: var(--secondary-1);
     }
 
     .legal-doc .update-date {
@@ -349,10 +369,14 @@
       font-weight: 700;
       margin-top: 2rem;
       margin-bottom: 1rem;
-      color: var(--primary);
+      color: var(--secondary-1);
       display: flex;
       align-items: center;
       gap: 0.5rem;
+    }
+
+    .legal-doc h2 i {
+      color: var(--primary);
     }
 
     .legal-doc h3 {
@@ -360,7 +384,7 @@
       font-weight: 600;
       margin-top: 1.5rem;
       margin-bottom: 0.75rem;
-      color: var(--text-main);
+      color: var(--secondary-1);
     }
 
     .legal-doc p {
@@ -379,16 +403,18 @@
 
     .legal-doc strong {
       font-weight: 700;
+      color: var(--text-main);
     }
 
     .legal-doc a {
       color: var(--primary);
       text-decoration: underline;
       text-underline-offset: 3px;
+      font-weight: 600;
     }
 
     .legal-doc a:hover {
-      color: var(--accent);
+      color: var(--primary-hover);
     }
 
     .legal-doc hr {
@@ -398,16 +424,16 @@
     }
 
     .highlight-box {
-      background: var(--primary-light);
-      border-left: 4px solid var(--primary);
+      background: var(--accent-light);
+      border-left: 4px solid var(--secondary-1);
       padding: 1.25rem 1.5rem;
       border-radius: 0 var(--radius) var(--radius) 0;
       margin: 1.5rem 0;
     }
 
     .highlight-box-accent {
-      background: var(--accent-light);
-      border-left: 4px solid var(--accent);
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
       padding: 1.25rem 1.5rem;
       border-radius: 0 var(--radius) var(--radius) 0;
       margin: 1.5rem 0;
@@ -423,23 +449,23 @@
     }
 
     .info-tag {
+      background: var(--accent-light);
+      color: var(--accent-text);
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9em;
+      border: 1px solid rgba(168, 224, 249, 0.8);
+    }
+
+    .info-tag-primary {
       background: var(--primary-light);
       color: var(--primary);
       padding: 0.2rem 0.55rem;
       border-radius: 6px;
       font-weight: 600;
       font-size: 0.9em;
-      border: 1px solid rgba(2, 132, 199, 0.2);
-    }
-
-    .info-tag-accent {
-      background: var(--accent-light);
-      color: var(--accent);
-      padding: 0.2rem 0.55rem;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.9em;
-      border: 1px solid rgba(249, 115, 22, 0.2);
+      border: 1px solid rgba(224, 90, 71, 0.3);
     }
 
     .feature-grid {
@@ -471,30 +497,34 @@
       align-items: center;
       gap: 0.65rem;
       font-weight: 700;
-      color: var(--primary);
-    }
-
-    .feature-card:nth-child(2) .feature-card-header,
-    .feature-card:nth-child(3) .feature-card-header {
-      color: var(--accent);
+      color: var(--secondary-1);
     }
 
     .feature-card-icon {
       width: 36px;
       height: 36px;
       border-radius: 10px;
-      background: var(--primary-light);
-      color: var(--primary);
+      background: var(--accent-light);
+      color: var(--accent-text);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1rem;
     }
 
-    .feature-card:nth-child(2) .feature-card-icon,
+    .feature-card:nth-child(2) .feature-card-icon {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
     .feature-card:nth-child(3) .feature-card-icon {
       background: var(--accent-light);
-      color: var(--accent);
+      color: var(--accent-text);
+    }
+
+    .feature-card:nth-child(4) .feature-card-icon {
+      background: var(--secondary-2-light);
+      color: var(--secondary-2);
     }
 
     /* Action bar inside tab */
@@ -544,8 +574,8 @@
       position: fixed;
       bottom: 2rem;
       right: 2rem;
-      background: var(--text-main);
-      color: var(--bg-body);
+      background: var(--secondary-1);
+      color: #FFFFFF;
       padding: 0.85rem 1.35rem;
       border-radius: 10px;
       font-size: 0.875rem;
@@ -558,7 +588,7 @@
       opacity: 0;
       transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       z-index: 100;
-      border-left: 4px solid var(--accent);
+      border-left: 4px solid var(--primary);
     }
 
     .toast.show {
@@ -589,10 +619,10 @@
     <div class="header-container">
       <a href="#" class="brand">
         <div class="brand-icon">
-          <img src="base_logo.png" alt="Airtourer" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-compass\' style=\'color:var(--primary);font-size:1.25rem;\'></i>'">
+          <img src="base_logo.png" alt="AirTourer" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-compass\' style=\'color:var(--primary);font-size:1.25rem;\'></i>'">
         </div>
         <div>
-          <div class="brand-title">Airtourer</div>
+          <div class="brand-title">AirTourer</div>
           <div class="brand-subtitle">Portail Légal & Confidentialité</div>
         </div>
       </a>
@@ -619,7 +649,7 @@
       </div>
       <h1 class="hero-title">Mentions Légales & Protection des Données</h1>
       <p class="hero-desc">
-        Transparence complète concernant l'application mobile <strong>Airtourer</strong>, son modèle sans compte respectueux de la vie privée, le traitement éphémère de la géolocalisation (requêtes spatiales sécurisées sans aucune journalisation), les annonces récompensées et la gestion du consentement publicitaire via Google UMP.
+        Transparence complète concernant l'application mobile <strong>AirTourer</strong>, son modèle sans compte respectueux de la vie privée, le traitement éphémère de la géolocalisation (requêtes spatiales sécurisées sans aucune journalisation), les annonces récompensées et la gestion du consentement publicitaire via Google UMP.
       </p>
     </section>
 
@@ -646,12 +676,12 @@
           <button class="btn" onclick="window.print()"><i class="fa-solid fa-print"></i> Imprimer</button>
         </div>
 
-        <h1>À Propos de Airtourer</h1>
+        <h1>À Propos de AirTourer</h1>
         <p class="update-date">Application mobile de découverte touristique et guidage audio</p>
 
         <h2><i class="fa-solid fa-circle-info"></i> Présentation</h2>
         <p>
-          <strong>Airtourer</strong> est une application mobile d'audioguide touristique géolocalisé. Conçue pour offrir une expérience fluide, enrichissante et respectueuse de la vie privée, elle vous accompagne lors de vos explorations urbaines et culturelles en vous racontant l'histoire et les secrets des points d'intérêt patrimoniaux.
+          <strong>AirTourer</strong> est une application mobile d'audioguide touristique géolocalisé. Conçue pour offrir une expérience fluide, enrichissante et respectueuse de la vie privée, elle vous accompagne lors de vos explorations urbaines et culturelles en vous racontant l'histoire et les secrets des points d'intérêt patrimoniaux.
         </p>
 
         <h2><i class="fa-solid fa-star"></i> Fonctionnalités clés & Principes de conception</h2>
@@ -675,7 +705,7 @@
 
           <div class="feature-card">
             <div class="feature-card-header">
-              <div class="feature-card-icon"><i class="fa-solid fa-film"></i></div>
+              <div class="feature-card-icon"><i class="fa-film"></i></div>
               <span>Crédits gratuits & Annonces vidéo</span>
             </div>
             <p>Accédez aux guides grâce à un système de crédits d'écoute. Obtenez 5 crédits gratuits en visionnant une courte vidéo récompensée Google AdMob.</p>
@@ -697,9 +727,9 @@
 
         <h2><i class="fa-solid fa-envelope"></i> Contact & Éditeur</h2>
         <p>
-          <strong>Éditeur :</strong> Airtourer<br>
+          <strong>Éditeur :</strong> AirTourer<br>
           <strong>Localisation :</strong> Lille, France<br>
-          <strong>Email :</strong> <span class="info-tag">ai.audiotourer@gmail.com</span>
+          <strong>Email :</strong> <span class="info-tag">airtourer.app@gmail.com</span>
         </p>
       </article>
 
@@ -714,12 +744,12 @@
         <p class="update-date">En vigueur au : 15/08/2026</p>
 
         <h2><i class="fa-solid fa-user-gear"></i> 1. Éditeur du service</h2>
-        <p>L'application mobile <strong>Airtourer</strong> (ci-après « l'Application ») est éditée par :</p>
+        <p>L'application mobile <strong>AirTourer</strong> (ci-après « l'Application ») est éditée par :</p>
         <ul>
-          <li><strong>Éditeur / Développeur</strong> : <span class="info-tag">Airtourer</span></li>
+          <li><strong>Éditeur / Développeur</strong> : <span class="info-tag">AirTourer</span></li>
           <li><strong>Localisation</strong> : <span class="info-tag">Lille, France</span></li>
-          <li><strong>Adresse email de contact & support</strong> : <span class="info-tag">ai.audiotourer@gmail.com</span></li>
-          <li><strong>Directeur de la publication</strong> : Airtourer</li>
+          <li><strong>Adresse email de contact & support</strong> : <span class="info-tag">airtourer.app@gmail.com</span></li>
+          <li><strong>Directeur de la publication</strong> : AirTourer</li>
         </ul>
 
         <h2><i class="fa-solid fa-server"></i> 2. Hébergement & Services Tiers</h2>
@@ -738,10 +768,10 @@
 
         <h2><i class="fa-solid fa-copyright"></i> 3. Propriété Intellectuelle</h2>
         <p>
-          L'ensemble des éléments composant l'application <strong>Airtourer</strong> (textes, visuels, photographies, logos, voix, guides audio, éléments sonores, code source, graphismes, interfaces et architecture logicielle) est protégé par les lois françaises et internationales relatives au droit d'auteur et à la propriété intellectuelle.
+          L'ensemble des éléments composant l'application <strong>AirTourer</strong> (textes, visuels, photographies, logos, voix, guides audio, éléments sonores, code source, graphismes, interfaces et architecture logicielle) est protégé par les lois françaises et internationales relatives au droit d'auteur et à la propriété intellectuelle.
         </p>
         <p>
-          Toute reproduction, représentation, diffusion, adaptation ou exploitation partielle ou totale de ces contenus sans autorisation écrite préalable d'<strong>Airtourer</strong> est formellement interdite.
+          Toute reproduction, représentation, diffusion, adaptation ou exploitation partielle ou totale de ces contenus sans autorisation écrite préalable d'<strong>AirTourer</strong> est formellement interdite.
         </p>
 
         <h2><i class="fa-solid fa-mobile-screen"></i> 4. Conditions d'accès et fonctionnement</h2>
@@ -777,15 +807,15 @@
         <p class="update-date">Dernière mise à jour : 15/08/2026</p>
 
         <p>
-          La présente Politique de Confidentialité a pour objet d'informer les utilisateurs de l'application mobile <strong>Airtourer</strong> sur la manière dont leurs données sont traitées, dans le strict respect du Règlement Général sur la Protection des Données (RGPD - Règlement UE 2016/679), de la Loi Informatique et Libertés française, ainsi que des politiques de confidentialité d'Apple (App Store) et de Google (Google Play).
+          La présente Politique de Confidentialité a pour objet d'informer les utilisateurs de l'application mobile <strong>AirTourer</strong> sur la manière dont leurs données sont traitées, dans le strict respect du Règlement Général sur la Protection des Données (RGPD - Règlement UE 2016/679), de la Loi Informatique et Libertés française, ainsi que des politiques de confidentialité d'Apple (App Store) et de Google (Google Play).
         </p>
 
         <h2><i class="fa-solid fa-user-shield"></i> 1. Responsable du Traitement des Données</h2>
         <p>Le traitement des données est effectué sous la responsabilité de :</p>
         <ul>
-          <li><strong>Éditeur / Développeur :</strong> <span class="info-tag">Airtourer</span></li>
+          <li><strong>Éditeur / Développeur :</strong> <span class="info-tag">AirTourer</span></li>
           <li><strong>Localisation :</strong> <span class="info-tag">Lille, France</span></li>
-          <li><strong>Contact / DPO :</strong> <span class="info-tag">ai.audiotourer@gmail.com</span></li>
+          <li><strong>Contact / DPO :</strong> <span class="info-tag">airtourer.app@gmail.com</span></li>
         </ul>
 
         <h2><i class="fa-solid fa-location-dot"></i> 2. Traitement des Données de Géolocalisation & Requêtes Serveur (Traitement éphémère)</h2>
@@ -803,7 +833,7 @@
 
         <h2><i class="fa-solid fa-key"></i> 3. Absence de Compte & Stockage Local Sécurisé (SecureStore)</h2>
         <p>
-          Pour maximiser la protection de votre vie privée, <strong>Airtourer</strong> applique le principe de minimisation des données (<em>Privacy by Design</em>) :
+          Pour maximiser la protection de votre vie privée, <strong>AirTourer</strong> applique le principe de minimisation des données (<em>Privacy by Design</em>) :
         </p>
         <ul>
           <li><strong>Zéro inscription / Zéro compte requis :</strong> Aucune création de compte, inscription, saisie d'adresse email, de nom ou de mot de passe n'est exigée pour utiliser l'application.</li>
@@ -819,12 +849,12 @@
 
         <h2><i class="fa-solid fa-rectangle-ad"></i> 4. Publicité & Gestion du Consentement (Google AdMob & Google UMP)</h2>
         <p>
-          L'application <strong>Airtourer</strong> propose un modèle d'accès gratuit respectueux financé par des annonces vidéo récompensées :
+          L'application <strong>AirTourer</strong> propose un modèle d'accès gratuit respectueux financé par des annonces vidéo récompensées :
         </p>
         <ul>
           <li><strong>Annonces vidéo récompensées AdMob :</strong> Les utilisateurs ont la possibilité de visionner une courte vidéo publicitaire fournie par Google AdMob pour obtenir <strong>5 crédits d'écoute audio gratuits</strong> par vidéo regardée.</li>
           <li><strong>Consentement conforme RGPD (Google UMP) :</strong> Pour les utilisateurs résidant dans l'Union Européenne (UE), l'Espace Économique Européen (EEE) et au Royaume-Uni (UK), le recueil du consentement publicitaire est opéré de manière transparente via la plateforme <strong>Google UMP (User Messaging Platform)</strong>, une plateforme de gestion du consentement (CMP) certifiée conforme aux exigences du RGPD et au standard IAB TCF.</li>
-          <li><strong>Révocation et modification à tout moment :</strong> Vous pouvez à tout moment revoir, modifier ou révoquer vos choix de consentement publicitaire en vous rendant dans l'écran <strong>« Paramètres » (Settings)</strong> de l'application Airtourer.</li>
+          <li><strong>Révocation et modification à tout moment :</strong> Vous pouvez à tout moment revoir, modifier ou révoquer vos choix de consentement publicitaire en vous rendant dans l'écran <strong>« Paramètres » (Settings)</strong> de l'application AirTourer.</li>
         </ul>
 
         <h2><i class="fa-solid fa-headphones"></i> 5. Lecture Audio en Arrière-plan (Foreground Service)</h2>
@@ -863,7 +893,7 @@
 
         <div class="highlight-box">
           <p><strong><i class="fa-solid fa-envelope"></i> Contact pour exercer vos droits :</strong></p>
-          <p>Pour toute question ou demande relative à vos données : <span class="info-tag">ai.audiotourer@gmail.com</span></p>
+          <p>Pour toute question ou demande relative à vos données : <span class="info-tag">airtourer.app@gmail.com</span></p>
           <p>Délai légal de réponse : <strong>30 jours</strong>.</p>
           <p>En cas de désaccord persistant, vous pouvez saisir la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés - <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>).</p>
         </div>
@@ -888,12 +918,12 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; <span id="year"></span> Airtourer. Tous droits réservés. - Lille, France</p>
+    <p>&copy; <span id="year"></span> AirTourer. Tous droits réservés. - Lille, France</p>
   </footer>
 
   <!-- Toast Notification -->
   <div id="toast" class="toast">
-    <i class="fa-solid fa-circle-check" style="color: var(--accent);"></i>
+    <i class="fa-solid fa-circle-check" style="color: var(--secondary-2);"></i>
     <span id="toast-msg">Copié dans le presse-papier !</span>
   </div>
 
@@ -942,9 +972,9 @@
 
     // Copy Raw Markdown for Notion / GitHub / Stores
     const rawMarkdown = {
-      apropos: `# À Propos de Airtourer\n\nAirtourer est une application mobile d'audioguide touristique géolocalisé. Explorez le patrimoine culturel à votre rythme grâce à des commentaires audio immersifs et des parcours interactifs.\n\n## Fonctionnalités principales\n- **Carte & Guidage interactif** : Suivi en temps réel en mémoire vive (RAM) et requêtes spatiales éphémères sécurisées vers Supabase PostGIS pour afficher les monuments et guider pas-à-pas.\n- **Écoute audio en arrière-plan** : Lecture continue des audioguides même écran verrouillé ou application en arrière-plan (FOREGROUND_SERVICE_MEDIA_PLAYBACK).\n- **Crédits gratuits via Google AdMob** : 5 crédits offerts par vidéo récompensée visionnée.\n- **Vie privée & Zéro compte** : Aucun compte ni email requis. Stockage local chiffré dans SecureStore (solde de crédits, POI débloqués, langue).\n- **Gestion du consentement UMP** : Contrôle et révocation du consentement publicitaire à tout moment dans les Paramètres.\n- **GPS éphémère** : Requêtes éphémères chiffrées (HTTPS/TLS) sans conservation ni journalisation (0s), aucune localisation en arrière-plan.\n\nContact : ai.audiotourer@gmail.com | Éditeur : Airtourer, Lille, France`,
-      mentions: `# Mentions Légales - Airtourer\n\n*En vigueur au : 15/08/2026*\n\n## 1. Éditeur du service\nL'application mobile **Airtourer** est éditée par :\n- **Éditeur / Développeur** : Airtourer\n- **Localisation** : Lille, France\n- **Adresse email de contact / Support** : ai.audiotourer@gmail.com\n- **Directeur de la publication** : Airtourer\n\n## 2. Hébergement & Services Tiers\n- **Site d'information** : GitHub Pages (GitHub, Inc., San Francisco, CA, USA)\n- **Base de données & API spatiale** : Supabase Inc. (PostgreSQL / PostGIS, San Francisco, CA, USA)\n- **Publicité & CMP** : Google Ireland Limited (Google AdMob & Google UMP)\n\n## 3. Propriété Intellectuelle\nL'ensemble du contenu (textes, audios, logos, code source) est la propriété exclusive d'Airtourer.\n\n## 4. Conditions d'accès\nApplication accessible sur Apple App Store et Google Play Store.\n\n## 5. Limitation de responsabilité\nInformations fournies à titre indicatif. L'utilisateur demeure seul responsable de sa sécurité lors de ses déplacements.\n\n## 6. Droit applicable\nDroit français.`,
-      confidentialite: `# Politique de Confidentialité - Airtourer\n\n*Dernière mise à jour : 15/08/2026*\n\n## 1. Responsable du Traitement\n- **Éditeur** : Airtourer\n- **Localisation** : Lille, France\n- **Email de contact / DPO** : ai.audiotourer@gmail.com\n\n## 2. Traitement des Données de Géolocalisation & Requêtes Serveur (Traitement éphémère)\n- **Traitement local en temps réel (RAM)** : Suivi continu, boussole et calculs de distance pour guidage pas-à-pas exécutés exclusivement dans la mémoire vive du smartphone.\n- **Requêtes de recherche éphémères (HTTPS/TLS)** : Transmission temporaire des coordonnées du centre et rayon à Supabase PostgreSQL PostGIS dans le seul but de renvoyer la liste des POIs correspondants.\n- **Zéro conservation / Zéro historique** : Coordonnées JAMAIS enregistrées sur le serveur, ni journalisées dans des logs, non associées à un compte (aucun compte), purgées dès l'exécution SQL. Conforme à la définition de traitement éphémère Google Play Data Safety.\n- **Aucune localisation en arrière-plan** : L'application n'utilise pas la permission \`ACCESS_BACKGROUND_LOCATION\`.\n- **Désactivation possible** à tout moment dans les réglages système du smartphone.\n\n## 3. Absence de Compte & Stockage Local Sécurisé (SecureStore)\n- **Zéro compte requis** : Aucune création de compte, adresse email ou mot de passe demandés.\n- **Stockage chiffré local (SecureStore)** : Solde de jetons/crédits d'écoute, identifiants de POI débloqués et préférences de langue sont stockés uniquement sur votre appareil.\n\n## 4. Publicité & Gestion du Consentement (Google AdMob & Google UMP)\n- **Vidéos récompensées AdMob** : Visionnage d'annonces récompensées pour obtenir 5 crédits d'écoute gratuits par vidéo.\n- **Consentement RGPD via Google UMP** : Plateforme CMP certifiée pour les utilisateurs de l'UE/UK/EEE.\n- **Gestion des préférences** : Possibilité de modifier ou révoquer son consentement publicitaire à tout moment dans l'écran « Paramètres » de l'application.\n\n## 5. Lecture Audio en Arrière-plan (Foreground Service)\n- Permission \`FOREGROUND_SERVICE_MEDIA_PLAYBACK\` utilisée strictement pour permettre la lecture audio avec écran verrouillé ou application minimisée.\n\n## 6. Destinataires et Sous-traitants\n- Supabase Inc. (Base de données PostgreSQL / PostGIS pour requêtes éphémères de POI)\n- Google Ireland Limited (Google AdMob & Google UMP)\n- GitHub Pages (Hébergement du site)\n\n## 7. Durée de Conservation\n- Géolocalisation & Requêtes POI : 0 seconde (traitement volatil en RAM / éphémère sur serveur)\n- Données locales : Jusqu'à réinitialisation ou désinstallation de l'app.\n\n## 8. Vos Droits (RGPD)\nAccès, effacement (via réinitialisation/désinstallation), retrait du consentement. Contact : ai.audiotourer@gmail.com. Réclamation CNIL : www.cnil.fr.\n\n## 9. Conformité Stores\nConforme aux règles Google Play User Data Policy (Data Safety) et Apple App Store Privacy Guidelines.`
+      apropos: `# À Propos de AirTourer\n\nAirTourer est une application mobile d'audioguide touristique géolocalisé. Explorez le patrimoine culturel à votre rythme grâce à des commentaires audio immersifs et des parcours interactifs.\n\n## Fonctionnalités principales\n- **Carte & Guidage interactif** : Suivi en temps réel en mémoire vive (RAM) et requêtes spatiales éphémères sécurisées vers Supabase PostGIS pour afficher les monuments et guider pas-à-pas.\n- **Écoute audio en arrière-plan** : Lecture continue des audioguides même écran verrouillé ou application en arrière-plan (FOREGROUND_SERVICE_MEDIA_PLAYBACK).\n- **Crédits gratuits via Google AdMob** : 5 crédits offerts par vidéo récompensée visionnée.\n- **Vie privée & Zéro compte** : Aucun compte ni email requis. Stockage local chiffré dans SecureStore (solde de crédits, POI débloqués, langue).\n- **Gestion du consentement UMP** : Contrôle et révocation du consentement publicitaire à tout moment dans les Paramètres.\n- **GPS éphémère** : Requêtes éphémères chiffrées (HTTPS/TLS) sans conservation ni journalisation (0s), aucune localisation en arrière-plan.\n\nContact : airtourer.app@gmail.com | Éditeur : AirTourer, Lille, France`,
+      mentions: `# Mentions Légales - AirTourer\n\n*En vigueur au : 15/08/2026*\n\n## 1. Éditeur du service\nL'application mobile **AirTourer** est éditée par :\n- **Éditeur / Développeur** : AirTourer\n- **Localisation** : Lille, France\n- **Adresse email de contact / Support** : airtourer.app@gmail.com\n- **Directeur de la publication** : AirTourer\n\n## 2. Hébergement & Services Tiers\n- **Site d'information** : GitHub Pages (GitHub, Inc., San Francisco, CA, USA)\n- **Base de données & API spatiale** : Supabase Inc. (PostgreSQL / PostGIS, San Francisco, CA, USA)\n- **Publicité & CMP** : Google Ireland Limited (Google AdMob & Google UMP)\n\n## 3. Propriété Intellectuelle\nL'ensemble du contenu (textes, audios, logos, code source) est la propriété exclusive d'AirTourer.\n\n## 4. Conditions d'accès\nApplication accessible sur Apple App Store et Google Play Store.\n\n## 5. Limitation de responsabilité\nInformations fournies à titre indicatif. L'utilisateur demeure seul responsable de sa sécurité lors de ses déplacements.\n\n## 6. Droit applicable\nDroit français.`,
+      confidentialite: `# Politique de Confidentialité - AirTourer\n\n*Dernière mise à jour : 15/08/2026*\n\n## 1. Responsable du Traitement\n- **Éditeur** : AirTourer\n- **Localisation** : Lille, France\n- **Email de contact / DPO** : airtourer.app@gmail.com\n\n## 2. Traitement des Données de Géolocalisation & Requêtes Serveur (Traitement éphémère)\n- **Traitement local en temps réel (RAM)** : Suivi continu, boussole et calculs de distance pour guidage pas-à-pas exécutés exclusivement dans la mémoire vive du smartphone.\n- **Requêtes de recherche éphémères (HTTPS/TLS)** : Transmission temporaire des coordonnées du centre et rayon à Supabase PostgreSQL PostGIS dans le seul but de renvoyer la liste des POIs correspondants.\n- **Zéro conservation / Zéro historique** : Coordonnées JAMAIS enregistrées sur le serveur, ni journalisées dans des logs, non associées à un compte (aucun compte), purgées dès l'exécution SQL. Conforme à la définition de traitement éphémère Google Play Data Safety.\n- **Aucune localisation en arrière-plan** : L'application n'utilise pas la permission \`ACCESS_BACKGROUND_LOCATION\`.\n- **Désactivation possible** à tout moment dans les réglages système du smartphone.\n\n## 3. Absence de Compte & Stockage Local Sécurisé (SecureStore)\n- **Zéro compte requis** : Aucune création de compte, adresse email ou mot de passe demandés.\n- **Stockage chiffré local (SecureStore)** : Solde de jetons/crédits d'écoute, identifiants de POI débloqués et préférences de langue sont stockés uniquement sur votre appareil.\n\n## 4. Publicité & Gestion du Consentement (Google AdMob & Google UMP)\n- **Vidéos récompensées AdMob** : Visionnage d'annonces récompensées pour obtenir 5 crédits d'écoute gratuits par vidéo.\n- **Consentement RGPD via Google UMP** : Plateforme CMP certifiée pour les utilisateurs de l'UE/UK/EEE.\n- **Gestion des préférences** : Possibilité de modifier ou révoquer son consentement publicitaire à tout moment dans l'écran « Paramètres » de l'application.\n\n## 5. Lecture Audio en Arrière-plan (Foreground Service)\n- Permission \`FOREGROUND_SERVICE_MEDIA_PLAYBACK\` utilisée strictement pour permettre la lecture audio avec écran verrouillé ou application minimisée.\n\n## 6. Destinataires et Sous-traitants\n- Supabase Inc. (Base de données PostgreSQL / PostGIS pour requêtes éphémères de POI)\n- Google Ireland Limited (Google AdMob & Google UMP)\n- GitHub Pages (Hébergement du site)\n\n## 7. Durée de Conservation\n- Géolocalisation & Requêtes POI : 0 seconde (traitement volatil en RAM / éphémère sur serveur)\n- Données locales : Jusqu'à réinitialisation ou désinstallation de l'app.\n\n## 8. Vos Droits (RGPD)\nAccès, effacement (via réinitialisation/désinstallation), retrait du consentement. Contact : airtourer.app@gmail.com. Réclamation CNIL : www.cnil.fr.\n\n## 9. Conformité Stores\nConforme aux règles Google Play User Data Policy (Data Safety) et Apple App Store Privacy Guidelines.`
     };
 
     function copyTabMarkdown(tabKey) {

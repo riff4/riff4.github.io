@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AirTourer - Mentions Légales & Politique de Confidentialité</title>
-  <meta name="description" content="Mentions légales et Politique de confidentialité de l'application mobile AirTourer. Information sur le respect du RGPD, le traitement éphémère du GPS (Supabase PostGIS), le stockage local chiffré SecureStore et la gestion du consentement publicitaire Google UMP.">
+  <title>AirTourer - Mentions Légales, Politique de Confidentialité & Transparence IA</title>
+  <meta name="description" content="Portail officiel de l'application AirTourer : Mentions légales, Politique de confidentialité conforme RGPD & stores, Transparence IA (AI Act UE 2024/1689), parcours guidés et système de badges.">
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="base_logo.png">
@@ -41,6 +41,10 @@
       --accent-light: rgba(168, 224, 249, 0.32);
       --accent-glow: rgba(168, 224, 249, 0.45);
       --accent-text: #1E3A4C;      /* Texte Bleu Canopée sur fond Bleu Toury */
+
+      --purple-ai: #8A4FFF;
+      --purple-ai-light: rgba(138, 79, 255, 0.12);
+      --purple-ai-border: rgba(138, 79, 255, 0.35);
 
       --warning: #E59838;
       --warning-light: rgba(229, 152, 56, 0.15);
@@ -81,6 +85,10 @@
       --accent-light: rgba(168, 224, 249, 0.18);
       --accent-glow: rgba(168, 224, 249, 0.3);
       --accent-text: #A8E0F9;
+
+      --purple-ai: #A27BFF;
+      --purple-ai-light: rgba(162, 123, 255, 0.2);
+      --purple-ai-border: rgba(162, 123, 255, 0.45);
 
       --warning: #F5B054;
       --warning-light: rgba(245, 176, 84, 0.18);
@@ -281,6 +289,12 @@
       border-color: rgba(168, 224, 249, 0.8);
     }
 
+    .badge-ai {
+      background: var(--purple-ai-light);
+      color: var(--purple-ai);
+      border-color: var(--purple-ai-border);
+    }
+
     .hero-title {
       font-size: 1.8rem;
       font-weight: 800;
@@ -291,7 +305,7 @@
     .hero-desc {
       color: var(--text-muted);
       font-size: 0.96rem;
-      max-width: 850px;
+      max-width: 900px;
     }
 
     /* Navigation Tabs */
@@ -439,12 +453,21 @@
       margin: 1.5rem 0;
     }
 
+    .highlight-box-ai {
+      background: var(--purple-ai-light);
+      border-left: 4px solid var(--purple-ai);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 1.5rem 0;
+    }
+
     .highlight-box p {
       margin-bottom: 0.5rem;
     }
 
     .highlight-box p:last-child,
-    .highlight-box-accent p:last-child {
+    .highlight-box-accent p:last-child,
+    .highlight-box-ai p:last-child {
       margin-bottom: 0;
     }
 
@@ -518,13 +541,23 @@
     }
 
     .feature-card:nth-child(3) .feature-card-icon {
-      background: var(--accent-light);
-      color: var(--accent-text);
+      background: var(--purple-ai-light);
+      color: var(--purple-ai);
     }
 
     .feature-card:nth-child(4) .feature-card-icon {
       background: var(--secondary-2-light);
       color: var(--secondary-2);
+    }
+
+    .feature-card:nth-child(5) .feature-card-icon {
+      background: var(--accent-light);
+      color: var(--accent-text);
+    }
+
+    .feature-card:nth-child(6) .feature-card-icon {
+      background: var(--primary-light);
+      color: var(--primary);
     }
 
     /* Action bar inside tab */
@@ -623,7 +656,7 @@
         </div>
         <div>
           <div class="brand-title">AirTourer</div>
-          <div class="brand-subtitle">Portail Légal & Confidentialité</div>
+          <div class="brand-subtitle">Portail Légal, Confidentialité & Transparence IA</div>
         </div>
       </a>
       
@@ -642,24 +675,25 @@
     <section class="hero-card">
       <div class="hero-badges">
         <span class="badge badge-success"><i class="fa-solid fa-shield-halved"></i> RGPD Conforme</span>
+        <span class="badge badge-ai"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Act Conforme (UE 2024/1689)</span>
         <span class="badge badge-primary"><i class="fa-solid fa-lock"></i> Stockage Local Sécurisé (SecureStore)</span>
         <span class="badge"><i class="fa-solid fa-user-xmark"></i> Zéro Compte Requis</span>
         <span class="badge badge-primary"><i class="fa-solid fa-location-crosshairs"></i> GPS Éphémère (Sans Stockage / RAM)</span>
-        <span class="badge badge-accent"><i class="fa-brands fa-google"></i> Google UMP / AdMob</span>
+        <span class="badge badge-accent"><i class="fa-brands fa-google"></i> Google UMP / AdMob & app-ads.txt</span>
       </div>
-      <h1 class="hero-title">Mentions Légales & Protection des Données</h1>
+      <h1 class="hero-title">Mentions Légales, Confidentialité & Transparence IA</h1>
       <p class="hero-desc">
-        Transparence complète concernant l'application mobile <strong>AirTourer</strong>, son modèle sans compte respectueux de la vie privée, le traitement éphémère de la géolocalisation (requêtes spatiales sécurisées sans aucune journalisation), les annonces récompensées et la gestion du consentement publicitaire via Google UMP.
+        Transparence complète concernant l'application mobile <strong>AirTourer</strong> (version 1.0.28) : son modèle sans compte respectueux de la vie privée, le traitement éphémère de la géolocalisation, ses parcours guidés thématiques, ses badges d'exploration, sa stricte conformité au <strong>Règlement européen sur l'Intelligence Artificielle (AI Act UE 2024/1689)</strong> avec signalement d'erreurs, ainsi que la monétisation respectueuse via annonces récompensées Google AdMob et Google UMP CMP.
       </p>
     </section>
 
     <!-- Navigation Tabs -->
     <nav class="tabs-nav">
       <button class="tab-btn active" onclick="switchTab('apropos')">
-        <i class="fa-solid fa-circle-info"></i> À Propos
+        <i class="fa-solid fa-circle-info"></i> À Propos & Fonctionnalités
       </button>
       <button class="tab-btn" onclick="switchTab('mentions')">
-        <i class="fa-solid fa-scale-balanced"></i> Mentions Légales
+        <i class="fa-solid fa-scale-balanced"></i> Mentions Légales & AI Act
       </button>
       <button class="tab-btn" onclick="switchTab('confidentialite')">
         <i class="fa-solid fa-user-shield"></i> Politique de Confidentialité
@@ -677,22 +711,38 @@
         </div>
 
         <h1>À Propos de AirTourer</h1>
-        <p class="update-date">Application mobile de découverte touristique et guidage audio</p>
+        <p class="update-date">Version de l'application : 1.0.28 (versionCode 29) • Dernière mise à jour : Septembre 2026</p>
 
         <h2><i class="fa-solid fa-circle-info"></i> Présentation</h2>
         <p>
-          <strong>AirTourer</strong> est une application mobile d'audioguide touristique géolocalisé. Conçue pour offrir une expérience fluide, enrichissante et respectueuse de la vie privée, elle vous accompagne lors de vos explorations urbaines et culturelles en vous racontant l'histoire et les secrets des points d'intérêt patrimoniaux.
+          <strong>AirTourer</strong> est une application mobile d'audioguide touristique géolocalisé conçue pour explorer le patrimoine historique et culturel en toute autonomie. L'application a été développée avec passion afin d'offrir une expérience fluide, enrichissante et strictement respectueuse de la vie privée des voyageurs, sans contraintes de groupe, d'horaires ni de compte utilisateur.
         </p>
 
-        <h2><i class="fa-solid fa-star"></i> Fonctionnalités clés & Principes de conception</h2>
+        <h2><i class="fa-solid fa-star"></i> Fonctionnalités clés & Nouveaux développements</h2>
         
         <div class="feature-grid">
           <div class="feature-card">
             <div class="feature-card-header">
               <div class="feature-card-icon"><i class="fa-solid fa-map-location-dot"></i></div>
-              <span>Carte & Guidage interactif</span>
+              <span>Carte interactive & Visite libre</span>
             </div>
-            <p>Calculs de distance en direct en mémoire vive (RAM) et requêtes spatiales éphémères sécurisées vers Supabase PostGIS pour afficher les monuments et vous guider pas-à-pas.</p>
+            <p>Calculs de distance en direct en mémoire vive (RAM) et requêtes spatiales éphémères sécurisées vers Supabase PostGIS pour explorer librement les monuments autour de vous.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card-header">
+              <div class="feature-card-icon"><i class="fa-solid fa-route"></i></div>
+              <span>Parcours guidés thématiques</span>
+            </div>
+            <p>Suivez des circuits immersifs de 7 à 15 étapes avec guidage pas-à-pas, détection de proximité automatique et tracé d'itinéraire pour visiter une ville complète à votre rythme.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card-header">
+              <div class="feature-card-icon"><i class="fa-solid fa-award"></i></div>
+              <span>Badges d'exploration & Gamification</span>
+            </div>
+            <p>Débloquez des badges culturels et des récompenses d'écoute au fil de vos découvertes (50, 88, 300 POIs explorés). Vos progrès sont conservés localement dans SecureStore.</p>
           </div>
 
           <div class="feature-card">
@@ -700,15 +750,15 @@
               <div class="feature-card-icon"><i class="fa-solid fa-headphones"></i></div>
               <span>Guides audio en arrière-plan</span>
             </div>
-            <p>Écoutez des explications audio immersives en toute liberté, même lorsque votre écran est verrouillé ou que l'application est réduite en arrière-plan (FOREGROUND_SERVICE_MEDIA_PLAYBACK).</p>
+            <p>Écoutez les narrations même lorsque votre écran est verrouillé ou que l'application est réduite, grâce au service d'avant-plan dédié <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code>.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-card-header">
-              <div class="feature-card-icon"><i class="fa-film"></i></div>
+              <div class="feature-card-icon"><i class="fa-solid fa-film"></i></div>
               <span>Crédits gratuits & Annonces vidéo</span>
             </div>
-            <p>Accédez aux guides grâce à un système de crédits d'écoute. Obtenez 5 crédits gratuits en visionnant une courte vidéo récompensée Google AdMob.</p>
+            <p>Modèle 100% gratuit : 1 crédit = 1 point d'intérêt débloqué. Rechargez gratuitement votre solde (5 crédits offerts) en visionnant une courte vidéo récompensée Google AdMob.</p>
           </div>
 
           <div class="feature-card">
@@ -716,20 +766,32 @@
               <div class="feature-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
               <span>Vie privée & Zéro compte</span>
             </div>
-            <p>Aucun compte, aucun email ni mot de passe requis. Vos données (crédits, POI débloqués, langue) sont conservées en local chiffré dans SecureStore.</p>
+            <p>Aucun compte, aucun email ni mot de passe requis. Vos données (crédits, POIs débloqués, badges, langue) sont chiffrées localement sur votre téléphone via SecureStore.</p>
           </div>
+        </div>
+
+        <h2><i class="fa-solid fa-wand-magic-sparkles"></i> Transparence sur l'Intelligence Artificielle (AI Act UE 2024/1689)</h2>
+        <div class="highlight-box-ai">
+          <p><strong><i class="fa-solid fa-circle-info"></i> Information claire et loyale sur l'usage de l'IA :</strong></p>
+          <p>
+            Les logos, textes explicatifs et pistes audio synthétiques de l'application <strong>AirTourer</strong> ont été créés et structurés à l'aide de technologies d'intelligence artificielle générative. Bien que nous apportions le plus grand soin à la révision et à l'exactitude des données culturelles et patrimoniales, des erreurs ou approximations peuvent parfois subsister dans les contenus écrits ou vocaux.
+          </p>
+          <p>
+            <strong>Dispositif de signalement intégré :</strong> L'application n'a pas vocation à remplacer les guides touristiques humains. Conformément aux exigences de transparence de l'AI Act européen, chaque fiche lieu dispose d'un bouton de signalement dédié permettant aux utilisateurs de faire remonter directement toute anomalie ou imprécision constatée afin que nous puissions la corriger rapidement.
+          </p>
         </div>
 
         <h2><i class="fa-solid fa-sliders"></i> Gestion du consentement publicitaire</h2>
         <p>
-          Pour les utilisateurs situés dans l'UE, au Royaume-Uni et dans l'EEE, le consentement publicitaire est géré via la plateforme <strong>Google UMP</strong> (User Messaging Platform / CMP certifiée). Vous conservez le contrôle total : vous pouvez modifier ou révoquer vos choix publicitaires à tout moment dans l'écran <strong>Paramètres</strong> de l'application.
+          Pour les utilisateurs situés dans l'UE, au Royaume-Uni et dans l'EEE, le consentement publicitaire est géré via la plateforme <strong>Google UMP</strong> (User Messaging Platform / CMP certifiée IAB TCF). Vous conservez le contrôle total : vous pouvez modifier ou révoquer vos choix publicitaires à tout moment dans l'écran <strong>Paramètres</strong> de l'application.
         </p>
 
         <h2><i class="fa-solid fa-envelope"></i> Contact & Éditeur</h2>
         <p>
           <strong>Éditeur :</strong> AirTourer<br>
           <strong>Localisation :</strong> Lille, France<br>
-          <strong>Email :</strong> <span class="info-tag">airtourer.app@gmail.com</span>
+          <strong>Email officiel de contact & support :</strong> <span class="info-tag">airtourer.app@gmail.com</span><br>
+          <strong>Site web du développeur :</strong> <a href="https://riff4.github.io" target="_blank" rel="noopener">https://riff4.github.io</a>
         </p>
       </article>
 
@@ -741,14 +803,14 @@
         </div>
 
         <h1>Mentions Légales</h1>
-        <p class="update-date">En vigueur au : 15/08/2026</p>
+        <p class="update-date">En vigueur au : 07/09/2026 (Version applicative 1.0.28 / Build 29)</p>
 
         <h2><i class="fa-solid fa-user-gear"></i> 1. Éditeur du service</h2>
-        <p>L'application mobile <strong>AirTourer</strong> (ci-après « l'Application ») est éditée par :</p>
+        <p>L'application mobile <strong>AirTourer</strong> (ci-après « l'Application ») et le présent site web sont édités par :</p>
         <ul>
           <li><strong>Éditeur / Développeur</strong> : <span class="info-tag">AirTourer</span></li>
           <li><strong>Localisation</strong> : <span class="info-tag">Lille, France</span></li>
-          <li><strong>Adresse email de contact & support</strong> : <span class="info-tag">airtourer.app@gmail.com</span></li>
+          <li><strong>Adresse email officielle de contact & support</strong> : <span class="info-tag">airtourer.app@gmail.com</span></li>
           <li><strong>Directeur de la publication</strong> : AirTourer</li>
         </ul>
 
@@ -759,38 +821,48 @@
             <strong>Hébergement du site d'information :</strong> GitHub Pages (GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). Site web : <a href="https://pages.github.com" target="_blank" rel="noopener">https://pages.github.com</a>
           </li>
           <li>
-            <strong>Hébergement de la base de données & API spatiale :</strong> Supabase Inc. (970 Folsom St, San Francisco, CA 94107, USA) pour l'infrastructure PostgreSQL / PostGIS hébergeant le catalogue des points d'intérêt patrimoniaux et traitant les requêtes spatiales de recherche de façon éphémère. Site web : <a href="https://supabase.com" target="_blank" rel="noopener">https://supabase.com</a>
+            <strong>Hébergement de la base de données & API spatiale :</strong> Supabase Inc. (970 Folsom St, San Francisco, CA 94107, USA) pour l'infrastructure PostgreSQL / PostGIS hébergeant le catalogue des points d'intérêt patrimoniaux, les parcours guidés thématiques et traitant les requêtes spatiales de façon éphémère. Site web : <a href="https://supabase.com" target="_blank" rel="noopener">https://supabase.com</a>
           </li>
           <li>
-            <strong>Régie publicitaire & Gestion du consentement :</strong> Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irlande) pour Google AdMob et la plateforme Google UMP (User Messaging Platform / CMP).
+            <strong>Régie publicitaire & Gestion du consentement :</strong> Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irlande) pour Google AdMob (annonces récompensées vérifiées par <code>app-ads.txt</code>) et la plateforme Google UMP (User Messaging Platform / CMP certifiée).
           </li>
         </ul>
 
-        <h2><i class="fa-solid fa-copyright"></i> 3. Propriété Intellectuelle</h2>
+        <h2><i class="fa-solid fa-wand-magic-sparkles"></i> 3. Contenus générés par IA & Conformité AI Act (Règlement UE 2024/1689)</h2>
         <p>
-          L'ensemble des éléments composant l'application <strong>AirTourer</strong> (textes, visuels, photographies, logos, voix, guides audio, éléments sonores, code source, graphismes, interfaces et architecture logicielle) est protégé par les lois françaises et internationales relatives au droit d'auteur et à la propriété intellectuelle.
+          Conformément aux obligations de transparence imposées par le <strong>Règlement (UE) 2024/1689 du Parlement européen et du Conseil (Législation sur l'Intelligence Artificielle / AI Act)</strong> :
+        </p>
+        <ul>
+          <li><strong>Nature des contenus :</strong> Les textes descriptifs des monuments, les pistes d'audioguide synthétisées et certains éléments graphiques et logos ont été générés ou assistés à l'aide d'outils d'intelligence artificielle.</li>
+          <li><strong>Information loyale :</strong> Ces contenus sont fournis à titre de divertissement et de vulgarisation touristique et culturelle. Ils n'ont pas vocation à se substituer au travail des guides-conférenciers ou historiens professionnels.</li>
+          <li><strong>Signalement et modération :</strong> Un bouton de signalement accessible sur chaque fiche lieu permet aux utilisateurs de notifier toute incohérence, erreur historique ou problème audio. L'Éditeur s'engage à examiner et corriger les signalements formulés.</li>
+        </ul>
+
+        <h2><i class="fa-solid fa-copyright"></i> 4. Propriété Intellectuelle</h2>
+        <p>
+          L'ensemble des éléments composant l'application <strong>AirTourer</strong> (textes, visuels, photographies, logos, voix synthétiques, guides audio, éléments sonores, code source, graphismes, interfaces, circuits thématiques et architecture logicielle) est protégé par les lois françaises et internationales relatives au droit d'auteur et à la propriété intellectuelle.
         </p>
         <p>
           Toute reproduction, représentation, diffusion, adaptation ou exploitation partielle ou totale de ces contenus sans autorisation écrite préalable d'<strong>AirTourer</strong> est formellement interdite.
         </p>
 
-        <h2><i class="fa-solid fa-mobile-screen"></i> 4. Conditions d'accès et fonctionnement</h2>
+        <h2><i class="fa-solid fa-mobile-screen"></i> 5. Conditions d'accès et fonctionnement</h2>
         <p>
           L'application est disponible en téléchargement sur les magasins d'applications officiels (Google Play Store, Apple App Store).
         </p>
         <p>
-          L'Éditeur met en œuvre les moyens raisonnables pour assurer un fonctionnement fluide de l'application. Toutefois, il ne peut garantir une disponibilité ininterrompue en cas de dysfonctionnement du réseau Internet, des services de télécommunication ou du matériel propre de l'utilisateur.
+          L'Éditeur met en œuvre les moyens raisonnables pour assurer un fonctionnement fluide de l'application. Toutefois, il ne peut garantir une disponibilité ininterrompue en cas de dysfonctionnement du réseau Internet, des services tiers ou du matériel propre de l'utilisateur.
         </p>
 
-        <h2><i class="fa-solid fa-triangle-exclamation"></i> 5. Limitation de responsabilité</h2>
+        <h2><i class="fa-solid fa-triangle-exclamation"></i> 6. Limitation de responsabilité</h2>
         <p>
-          Les contenus culturels, historiques et touristiques fournis dans l'application sont rédigés avec le plus grand soin à titre informatif et de divertissement. L'Éditeur ne saurait être tenu responsable en cas d'imprécision ou d'évolution des lieux réels.
+          Les contenus culturels, historiques et touristiques fournis dans l'application sont rédigés avec soin à titre informatif. L'Éditeur ne saurait être tenu responsable en cas d'imprécision ou d'évolution des lieux réels.
         </p>
         <p>
-          L'utilisateur reste seul responsable de sa vigilance, de sa sécurité et du respect des règles de circulation et de sécurité lorsqu'il se déplace sur la voie publique lors de l'écoute des audioguides.
+          L'utilisateur reste seul responsable de sa vigilance, de sa sécurité et du respect du code de la route et des règles de sécurité lorsqu'il se déplace sur la voie publique lors de l'écoute des audioguides ou du suivi d'un parcours thématique.
         </p>
 
-        <h2><i class="fa-solid fa-gavel"></i> 6. Droit applicable</h2>
+        <h2><i class="fa-solid fa-gavel"></i> 7. Droit applicable</h2>
         <p>
           Les présentes Mentions Légales sont régies par le droit français. En cas de litige, les tribunaux français seront seuls compétents.
         </p>
@@ -804,10 +876,10 @@
         </div>
 
         <h1>Politique de Confidentialité</h1>
-        <p class="update-date">Dernière mise à jour : 15/08/2026</p>
+        <p class="update-date">Dernière mise à jour : 07/09/2026 (Version applicative 1.0.28 / Build 29)</p>
 
         <p>
-          La présente Politique de Confidentialité a pour objet d'informer les utilisateurs de l'application mobile <strong>AirTourer</strong> sur la manière dont leurs données sont traitées, dans le strict respect du Règlement Général sur la Protection des Données (RGPD - Règlement UE 2016/679), de la Loi Informatique et Libertés française, ainsi que des politiques de confidentialité d'Apple (App Store) et de Google (Google Play).
+          La présente Politique de Confidentialité a pour objet d'informer les utilisateurs de l'application mobile <strong>AirTourer</strong> sur la manière dont leurs données sont traitées, dans le strict respect du Règlement Général sur la Protection des Données (RGPD - Règlement UE 2016/679), de la Loi Informatique et Libertés française, du Règlement Européen sur l'Intelligence Artificielle (AI Act UE 2024/1689), ainsi que des politiques de confidentialité d'Apple (App Store) et de Google (Google Play).
         </p>
 
         <h2><i class="fa-solid fa-user-shield"></i> 1. Responsable du Traitement des Données</h2>
@@ -815,7 +887,7 @@
         <ul>
           <li><strong>Éditeur / Développeur :</strong> <span class="info-tag">AirTourer</span></li>
           <li><strong>Localisation :</strong> <span class="info-tag">Lille, France</span></li>
-          <li><strong>Contact / DPO :</strong> <span class="info-tag">airtourer.app@gmail.com</span></li>
+          <li><strong>Contact DPO / Support :</strong> <span class="info-tag">airtourer.app@gmail.com</span></li>
         </ul>
 
         <h2><i class="fa-solid fa-location-dot"></i> 2. Traitement des Données de Géolocalisation & Requêtes Serveur (Traitement éphémère)</h2>
@@ -823,11 +895,11 @@
         <div class="highlight-box">
           <p><strong><i class="fa-solid fa-circle-check"></i> Engagements stricts et transparence sur la géolocalisation :</strong></p>
           <ul>
-            <li><strong>Traitement local en temps réel (RAM de l'appareil) :</strong> Le suivi continu de votre position (affichage du point bleu sur la carte interactive, calculs de distance en direct pour le guidage pas-à-pas, boussole d'orientation) s'exécute exclusivement dans la mémoire vive (RAM) de votre smartphone.</li>
-            <li><strong>Requêtes de recherche éphémères (HTTPS / TLS) :</strong> Lorsque vous recherchez les points d'intérêt (POI) autour de vous ou que vous déplacez la carte, les coordonnées géographiques du centre de la zone visualisée et le rayon de recherche sont transmis de manière strictement éphémère via une connexion sécurisée et chiffrée (HTTPS / TLS) à notre base de données hébergée (<strong>Supabase / PostgreSQL PostGIS</strong>). Cette transmission a pour unique finalité d'interroger l'index spatial pour renvoyer la liste des monuments et audioguides correspondants.</li>
-            <li><strong>Aucune conservation / Aucun historique / Suppression immédiate :</strong> Ces coordonnées ne sont <strong>JAMAIS enregistrées sur le serveur</strong>, ni journalisées dans des fichiers de logs, ni associées à un compte utilisateur (aucun compte n'existe dans l'application), ni cédées ou revendues à des tiers. Dès que la requête SQL est exécutée et le résultat renvoyé, les coordonnées sont immédiatement supprimées de la mémoire serveur. Ce traitement répond pleinement à la définition d'un traitement « éphémère » (<em>ephemeral processing</em>) au sens de la fiche de sécurité des données Google Play (<em>Data Safety</em>).</li>
-            <li><strong>Aucune localisation en arrière-plan :</strong> L'application n'utilise pas et ne demande pas la permission d'accès à la position en arrière-plan (<code>ACCESS_BACKGROUND_LOCATION</code>). Dès que l'application est en arrière-plan ou fermée, toute lecture du signal GPS s'arrête immédiatement.</li>
-            <li><strong>Contrôle et liberté de l'utilisateur :</strong> Vous pouvez autoriser ou refuser l'accès à la position GPS lors du lancement de l'application ou à tout moment dans les réglages système de votre smartphone. Le refus de la géolocalisation n'empêche pas l'accès aux fiches des POI et aux audioguides.</li>
+            <li><strong>Traitement local en temps réel (RAM de l'appareil) :</strong> Le suivi continu de votre position (affichage du marqueur sur la carte, calculs de distance pour le guidage pas-à-pas et les parcours guidés, boussole d'orientation) s'exécute exclusivement dans la mémoire vive (RAM) de votre smartphone.</li>
+            <li><strong>Requêtes de recherche éphémères (HTTPS / TLS) :</strong> Lorsque vous recherchez les points d'intérêt (POI) autour de vous ou explorez un circuit thématique, les coordonnées géographiques du centre de la zone visualisée et le rayon de recherche sont transmis de manière strictement éphémère via une connexion sécurisée et chiffrée (HTTPS / TLS) à notre base de données hébergée (<strong>Supabase / PostgreSQL PostGIS</strong>). Cette transmission a pour unique finalité d'interroger l'index spatial pour renvoyer la liste des monuments et audioguides correspondants.</li>
+            <li><strong>Aucune conservation / Aucun historique / Suppression immédiate :</strong> Ces coordonnées ne sont <strong>JAMAIS enregistrées sur le serveur</strong>, ni journalisées dans des fichiers de logs, ni associées à un compte utilisateur (aucun compte n'existe dans l'application), ni cédées ou revendues à des tiers. Dès que la requête spatiale est exécutée et le résultat renvoyé, les coordonnées sont immédiatement purgées de la mémoire serveur. Ce traitement répond pleinement à la définition d'un traitement « éphémère » (<em>ephemeral processing</em>) au sens de la fiche de sécurité des données Google Play (<em>Data Safety</em>).</li>
+            <li><strong>Aucune localisation en arrière-plan :</strong> L'application n'utilise pas et ne demande pas la permission d'accès à la position en arrière-plan (<code>ACCESS_BACKGROUND_LOCATION</code>). Dès que l'application est minimisée ou fermée, toute lecture du signal GPS s'arrête immédiatement.</li>
+            <li><strong>Contrôle et liberté de l'utilisateur :</strong> Vous pouvez autoriser ou refuser l'accès à la position GPS lors du lancement de l'application ou à tout moment dans les réglages de votre smartphone. Le refus de la géolocalisation n'empêche pas l'accès manuel aux fiches des POIs, aux circuits et aux audioguides.</li>
           </ul>
         </div>
 
@@ -841,47 +913,58 @@
             <ul>
               <li>Le solde de jetons / crédits d'écoute audio gratuits ;</li>
               <li>La liste des identifiants (IDs) de points d'intérêt (POI) débloqués par l'utilisateur ;</li>
-              <li>Les préférences linguistiques de l'interface et des guides audio.</li>
+              <li>Les badges d'exploration et récompenses obtenus au fil des visites ;</li>
+              <li>Les préférences linguistiques de l'interface et des guides audio (Français / Anglais).</li>
             </ul>
           </li>
           <li>Ces données restent cantonnées à votre terminal et ne sont jamais transmises à des serveurs distants.</li>
         </ul>
 
-        <h2><i class="fa-solid fa-rectangle-ad"></i> 4. Publicité & Gestion du Consentement (Google AdMob & Google UMP)</h2>
+        <h2><i class="fa-solid fa-wand-magic-sparkles"></i> 4. Transparence IA & Signalements Utilisateurs (AI Act UE 2024/1689)</h2>
+        <p>
+          Dans le cadre de l'utilisation de l'intelligence artificielle pour la génération des contenus patrimoniaux et des pistes audio vocales :
+        </p>
+        <ul>
+          <li><strong>Aucune collecte pour l'entraînement d'IA :</strong> Aucune donnée personnelle, aucune position GPS et aucun comportement utilisateur n'est utilisé, transmis ou vendu pour l'entraînement de modèles d'intelligence artificielle tiers.</li>
+          <li><strong>Traitement des signalements d'anomalies (Feedback) :</strong> Lorsqu'un utilisateur signale une inexactitude sur un point d'intérêt via le bouton dédié, seul le texte saisi décrivant le problème et l'identifiant du lieu concerné sont transmis à des fins d'amélioration éditoriale. Aucun identifiant personnel ni profil nominatif n'est collecté.</li>
+        </ul>
+
+        <h2><i class="fa-solid fa-rectangle-ad"></i> 5. Publicité & Gestion du Consentement (Google AdMob & Google UMP)</h2>
         <p>
           L'application <strong>AirTourer</strong> propose un modèle d'accès gratuit respectueux financé par des annonces vidéo récompensées :
         </p>
         <ul>
-          <li><strong>Annonces vidéo récompensées AdMob :</strong> Les utilisateurs ont la possibilité de visionner une courte vidéo publicitaire fournie par Google AdMob pour obtenir <strong>5 crédits d'écoute audio gratuits</strong> par vidéo regardée.</li>
-          <li><strong>Consentement conforme RGPD (Google UMP) :</strong> Pour les utilisateurs résidant dans l'Union Européenne (UE), l'Espace Économique Européen (EEE) et au Royaume-Uni (UK), le recueil du consentement publicitaire est opéré de manière transparente via la plateforme <strong>Google UMP (User Messaging Platform)</strong>, une plateforme de gestion du consentement (CMP) certifiée conforme aux exigences du RGPD et au standard IAB TCF.</li>
+          <li><strong>Annonces vidéo récompensées AdMob :</strong> Les utilisateurs peuvent visionner une courte vidéo publicitaire fournie par Google AdMob pour obtenir <strong>5 crédits d'écoute audio gratuits</strong> par vidéo regardée.</li>
+          <li><strong>Fichier de transparence publicitaire <code>app-ads.txt</code> :</strong> Le présent site héberge le fichier officiel <a href="/app-ads.txt" target="_blank">app-ads.txt</a> conformément au standard IAB pour certifier l'inventaire publicitaire AdMob.</li>
+          <li><strong>Consentement conforme RGPD (Google UMP) :</strong> Pour les utilisateurs résidant dans l'Union Européenne (UE), l'Espace Économique Européen (EEE) et au Royaume-Uni (UK), le recueil du consentement publicitaire est opéré de manière transparente via la plateforme <strong>Google UMP (User Messaging Platform)</strong>, une CMP certifiée conforme au standard IAB TCF.</li>
           <li><strong>Révocation et modification à tout moment :</strong> Vous pouvez à tout moment revoir, modifier ou révoquer vos choix de consentement publicitaire en vous rendant dans l'écran <strong>« Paramètres » (Settings)</strong> de l'application AirTourer.</li>
         </ul>
 
-        <h2><i class="fa-solid fa-headphones"></i> 5. Lecture Audio en Arrière-plan (Foreground Service)</h2>
+        <h2><i class="fa-solid fa-headphones"></i> 6. Lecture Audio en Arrière-plan (Foreground Service)</h2>
         <p>
           L'application utilise l'autorisation de service d'avant-plan Android <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code> :
         </p>
         <ul>
-          <li><strong>Finalité stricte :</strong> Cette autorisation est utilisée <strong>exclusivement pour la lecture multimédia</strong> (lecture continue des guides audio).</li>
-          <li><strong>Bénéfice utilisateur :</strong> Elle vous permet de continuer à écouter l'audioguide lorsque vous verrouillez l'écran de votre smartphone ou lorsque l'application est réduite en arrière-plan pendant votre visite.</li>
+          <li><strong>Finalité stricte :</strong> Cette autorisation est employée <strong>exclusivement pour la lecture multimédia</strong> (lecture continue des guides audio).</li>
+          <li><strong>Bénéfice utilisateur :</strong> Elle vous permet de continuer à écouter l'audioguide lorsque vous verrouillez l'écran de votre smartphone ou lorsque l'application est minimisée pendant votre promenade.</li>
           <li><strong>Aucun détournement :</strong> Ce service ne réalise aucune collecte de données personnelles, aucun enregistrement sonore et aucun relevé de position GPS en arrière-plan.</li>
         </ul>
 
-        <h2><i class="fa-solid fa-server"></i> 6. Destinataires et Sous-traitants</h2>
+        <h2><i class="fa-solid fa-server"></i> 7. Destinataires et Sous-traitants</h2>
         <p>Vos données personnelles ne sont <strong>jamais vendues, louées ou cédées</strong> à des tiers à des fins commerciales. Les prestataires techniques intervenant pour le service sont :</p>
         <ul>
-          <li><strong>Supabase Inc. :</strong> Pour l'hébergement de la base de données (PostgreSQL / PostGIS) distribuant le catalogue des points d'intérêt et traitant de manière éphémère les requêtes spatiales de recherche de POI via HTTPS/TLS.</li>
-          <li><strong>Google Ireland Limited :</strong> Pour la diffusion des publicités vidéo récompensées (Google AdMob) et la gestion du consentement réglementaire (Google UMP CMP).</li>
-          <li><strong>GitHub Pages (GitHub, Inc.) :</strong> Pour l'hébergement du site statique d'information légale.</li>
+          <li><strong>Supabase Inc. :</strong> Hébergement de la base de données PostgreSQL / PostGIS distribuant le catalogue des points d'intérêt, les parcours et traitant de manière éphémère les requêtes spatiales via HTTPS/TLS.</li>
+          <li><strong>Google Ireland Limited :</strong> Diffusion des publicités vidéo récompensées (Google AdMob) et gestion du consentement réglementaire (Google UMP CMP).</li>
+          <li><strong>GitHub Pages (GitHub, Inc.) :</strong> Hébergement du site statique d'information légale et du fichier <code>app-ads.txt</code>.</li>
         </ul>
 
-        <h2><i class="fa-solid fa-hourglass-half"></i> 7. Durée de Conservation des Données</h2>
+        <h2><i class="fa-solid fa-hourglass-half"></i> 8. Durée de Conservation des Données</h2>
         <ul>
           <li><strong>Données de géolocalisation & requêtes de recherche de POI :</strong> <strong>0 seconde</strong> (traitement en temps réel volatil en mémoire RAM sur le smartphone et traitement éphémère en mémoire vive sur le serveur PostgreSQL uniquement pendant l'exécution de la requête spatiale ; aucune conservation sur disque, aucun historique, aucune journalisation).</li>
           <li><strong>Données locales (SecureStore) :</strong> Conservées sur votre appareil jusqu'à la réinitialisation des données de l'application ou sa désinstallation.</li>
         </ul>
 
-        <h2><i class="fa-solid fa-hand-holding-hand"></i> 8. Vos Droits (Conformité RGPD)</h2>
+        <h2><i class="fa-solid fa-hand-holding-hand"></i> 9. Vos Droits (Conformité RGPD)</h2>
         <p>
           Conformément au Règlement Général sur la Protection des Données (RGPD - Règlement UE 2016/679), vous bénéficiez des droits suivants :
         </p>
@@ -894,20 +977,20 @@
         <div class="highlight-box">
           <p><strong><i class="fa-solid fa-envelope"></i> Contact pour exercer vos droits :</strong></p>
           <p>Pour toute question ou demande relative à vos données : <span class="info-tag">airtourer.app@gmail.com</span></p>
-          <p>Délai légal de réponse : <strong>30 jours</strong>.</p>
+          <p>Délai légal de réponse maximal : <strong>30 jours</strong>.</p>
           <p>En cas de désaccord persistant, vous pouvez saisir la <strong>CNIL</strong> (Commission Nationale de l'Informatique et des Libertés - <a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>).</p>
         </div>
 
-        <h2><i class="fa-solid fa-store"></i> 9. Conformité aux Directives des Stores (Google Play & Apple App Store)</h2>
+        <h2><i class="fa-solid fa-store"></i> 10. Conformité aux Directives des Stores (Google Play & Apple App Store)</h2>
         <p>
           La présente politique est rédigée en conformité stricte avec :
         </p>
         <ul>
-          <li><strong>Google Play User Data Policy :</strong> Déclaration transparente de la localisation éphémère (<em>Ephemeral Processing</em> sans stockage ni journalisation dans la section Sécurité des données / <em>Data Safety</em>), déclaration de la permission <em>Foreground Service Media Playback</em>, conformité Google UMP / CMP pour la publicité, absence de géolocalisation en arrière-plan (<code>ACCESS_BACKGROUND_LOCATION</code> non utilisée).</li>
-          <li><strong>Apple App Store Privacy Guidelines :</strong> Usage transparent du GPS en direct sans tracking IDFA, absence de profilage, respect strict de la vie privée.</li>
+          <li><strong>Google Play User Data Policy :</strong> Déclaration transparente de la localisation éphémère (<em>Ephemeral Processing</em> sans stockage ni journalisation dans la section Sécurité des données / <em>Data Safety</em>), déclaration de la permission <em>Foreground Service Media Playback</em>, conformité Google UMP / CMP pour la publicité, absence de géolocalisation en arrière-plan (<code>ACCESS_BACKGROUND_LOCATION</code> non demandée).</li>
+          <li><strong>Apple App Store Privacy Guidelines :</strong> Usage transparent du GPS en direct sans tracking IDFA, absence de profilage publicitaire nominatif, respect strict de la vie privée.</li>
         </ul>
 
-        <h2><i class="fa-solid fa-pen-to-square"></i> 10. Modifications de la Politique</h2>
+        <h2><i class="fa-solid fa-pen-to-square"></i> 11. Modifications de la Politique</h2>
         <p>
           Cette Politique de Confidentialité peut être mise à jour pour refléter d'éventuelles évolutions fonctionnelles ou légales. La date de dernière mise à jour sera actualisée en en-tête du document.
         </p>
@@ -972,9 +1055,9 @@
 
     // Copy Raw Markdown for Notion / GitHub / Stores
     const rawMarkdown = {
-      apropos: `# À Propos de AirTourer\n\nAirTourer est une application mobile d'audioguide touristique géolocalisé. Explorez le patrimoine culturel à votre rythme grâce à des commentaires audio immersifs et des parcours interactifs.\n\n## Fonctionnalités principales\n- **Carte & Guidage interactif** : Suivi en temps réel en mémoire vive (RAM) et requêtes spatiales éphémères sécurisées vers Supabase PostGIS pour afficher les monuments et guider pas-à-pas.\n- **Écoute audio en arrière-plan** : Lecture continue des audioguides même écran verrouillé ou application en arrière-plan (FOREGROUND_SERVICE_MEDIA_PLAYBACK).\n- **Crédits gratuits via Google AdMob** : 5 crédits offerts par vidéo récompensée visionnée.\n- **Vie privée & Zéro compte** : Aucun compte ni email requis. Stockage local chiffré dans SecureStore (solde de crédits, POI débloqués, langue).\n- **Gestion du consentement UMP** : Contrôle et révocation du consentement publicitaire à tout moment dans les Paramètres.\n- **GPS éphémère** : Requêtes éphémères chiffrées (HTTPS/TLS) sans conservation ni journalisation (0s), aucune localisation en arrière-plan.\n\nContact : airtourer.app@gmail.com | Éditeur : AirTourer, Lille, France`,
-      mentions: `# Mentions Légales - AirTourer\n\n*En vigueur au : 15/08/2026*\n\n## 1. Éditeur du service\nL'application mobile **AirTourer** est éditée par :\n- **Éditeur / Développeur** : AirTourer\n- **Localisation** : Lille, France\n- **Adresse email de contact / Support** : airtourer.app@gmail.com\n- **Directeur de la publication** : AirTourer\n\n## 2. Hébergement & Services Tiers\n- **Site d'information** : GitHub Pages (GitHub, Inc., San Francisco, CA, USA)\n- **Base de données & API spatiale** : Supabase Inc. (PostgreSQL / PostGIS, San Francisco, CA, USA)\n- **Publicité & CMP** : Google Ireland Limited (Google AdMob & Google UMP)\n\n## 3. Propriété Intellectuelle\nL'ensemble du contenu (textes, audios, logos, code source) est la propriété exclusive d'AirTourer.\n\n## 4. Conditions d'accès\nApplication accessible sur Apple App Store et Google Play Store.\n\n## 5. Limitation de responsabilité\nInformations fournies à titre indicatif. L'utilisateur demeure seul responsable de sa sécurité lors de ses déplacements.\n\n## 6. Droit applicable\nDroit français.`,
-      confidentialite: `# Politique de Confidentialité - AirTourer\n\n*Dernière mise à jour : 15/08/2026*\n\n## 1. Responsable du Traitement\n- **Éditeur** : AirTourer\n- **Localisation** : Lille, France\n- **Email de contact / DPO** : airtourer.app@gmail.com\n\n## 2. Traitement des Données de Géolocalisation & Requêtes Serveur (Traitement éphémère)\n- **Traitement local en temps réel (RAM)** : Suivi continu, boussole et calculs de distance pour guidage pas-à-pas exécutés exclusivement dans la mémoire vive du smartphone.\n- **Requêtes de recherche éphémères (HTTPS/TLS)** : Transmission temporaire des coordonnées du centre et rayon à Supabase PostgreSQL PostGIS dans le seul but de renvoyer la liste des POIs correspondants.\n- **Zéro conservation / Zéro historique** : Coordonnées JAMAIS enregistrées sur le serveur, ni journalisées dans des logs, non associées à un compte (aucun compte), purgées dès l'exécution SQL. Conforme à la définition de traitement éphémère Google Play Data Safety.\n- **Aucune localisation en arrière-plan** : L'application n'utilise pas la permission \`ACCESS_BACKGROUND_LOCATION\`.\n- **Désactivation possible** à tout moment dans les réglages système du smartphone.\n\n## 3. Absence de Compte & Stockage Local Sécurisé (SecureStore)\n- **Zéro compte requis** : Aucune création de compte, adresse email ou mot de passe demandés.\n- **Stockage chiffré local (SecureStore)** : Solde de jetons/crédits d'écoute, identifiants de POI débloqués et préférences de langue sont stockés uniquement sur votre appareil.\n\n## 4. Publicité & Gestion du Consentement (Google AdMob & Google UMP)\n- **Vidéos récompensées AdMob** : Visionnage d'annonces récompensées pour obtenir 5 crédits d'écoute gratuits par vidéo.\n- **Consentement RGPD via Google UMP** : Plateforme CMP certifiée pour les utilisateurs de l'UE/UK/EEE.\n- **Gestion des préférences** : Possibilité de modifier ou révoquer son consentement publicitaire à tout moment dans l'écran « Paramètres » de l'application.\n\n## 5. Lecture Audio en Arrière-plan (Foreground Service)\n- Permission \`FOREGROUND_SERVICE_MEDIA_PLAYBACK\` utilisée strictement pour permettre la lecture audio avec écran verrouillé ou application minimisée.\n\n## 6. Destinataires et Sous-traitants\n- Supabase Inc. (Base de données PostgreSQL / PostGIS pour requêtes éphémères de POI)\n- Google Ireland Limited (Google AdMob & Google UMP)\n- GitHub Pages (Hébergement du site)\n\n## 7. Durée de Conservation\n- Géolocalisation & Requêtes POI : 0 seconde (traitement volatil en RAM / éphémère sur serveur)\n- Données locales : Jusqu'à réinitialisation ou désinstallation de l'app.\n\n## 8. Vos Droits (RGPD)\nAccès, effacement (via réinitialisation/désinstallation), retrait du consentement. Contact : airtourer.app@gmail.com. Réclamation CNIL : www.cnil.fr.\n\n## 9. Conformité Stores\nConforme aux règles Google Play User Data Policy (Data Safety) et Apple App Store Privacy Guidelines.`
+      apropos: `# À Propos de AirTourer (v1.0.28)\n\nAirTourer est une application mobile d'audioguide touristique géolocalisé. Explorez le patrimoine culturel en toute liberté grâce à des commentaires audio immersifs, des circuits complets et une expérience respectueuse de votre vie privée.\n\n## Fonctionnalités principales\n- **Carte interactive & Visite libre** : Suivi en direct en mémoire vive (RAM) et requêtes spatiales éphémères sécurisées vers Supabase PostGIS pour découvrir les monuments alentour.\n- **Parcours guidés thématiques** : Circuits guidés de 7 à 15 étapes avec guidage pas-à-pas, détection de proximité locale et tracé interactif.\n- **Badges d'exploration & Gamification** : Déblocage de récompenses locales et suivi des monuments découverts (50, 88, 300 POIs), sans aucun pistage distant.\n- **Écoute audio en arrière-plan** : Lecture continue des audioguides même écran éteint ou application minimisée (FOREGROUND_SERVICE_MEDIA_PLAYBACK).\n- **Modèle 100% gratuit via Google AdMob** : 5 crédits offerts par courte vidéo récompensée visionnée (1 crédit = 1 point d'intérêt).\n- **Transparence IA (AI Act UE 2024/1689)** : Textes, voix et visuels créés avec l'assistance d'IA. Signalement facile des erreurs intégré directement sur chaque fiche lieu.\n- **Vie privée & Zéro compte** : Aucun compte ni mot de passe requis. Données conservées localement dans SecureStore.\n- **Gestion du consentement Google UMP** : Contrôle et révocation du consentement publicitaire à tout moment dans les Paramètres.\n\nContact officiel : airtourer.app@gmail.com | Éditeur : AirTourer, Lille, France`,
+      mentions: `# Mentions Légales - AirTourer\n\n*En vigueur au : 07/09/2026 (Version 1.0.28 / Build 29)*\n\n## 1. Éditeur du service\nL'application mobile **AirTourer** et le site sont édités par :\n- **Éditeur / Développeur** : AirTourer\n- **Localisation** : Lille, France\n- **Adresse email officielle de contact / Support** : airtourer.app@gmail.com\n- **Directeur de la publication** : AirTourer\n\n## 2. Hébergement & Services Tiers\n- **Site d'information & app-ads.txt** : GitHub Pages (GitHub, Inc., San Francisco, CA, USA)\n- **Base de données & API spatiale** : Supabase Inc. (PostgreSQL / PostGIS, San Francisco, CA, USA)\n- **Régie publicitaire & CMP** : Google Ireland Limited (Google AdMob récompensé & Google UMP CMP)\n\n## 3. Contenus générés par IA & Conformité AI Act (Règlement UE 2024/1689)\nLes descriptifs culturels, les voix de narration synthétiques et les visuels sont générés ou assistés par intelligence artificielle. Ils sont fournis à titre de vulgarisation culturelle. Les utilisateurs disposent d'un bouton de signalement d'erreur sur chaque fiche de lieu.\n\n## 4. Propriété Intellectuelle\nL'ensemble du contenu (textes, audios, logos, code source, circuits) est la propriété exclusive d'AirTourer.\n\n## 5. Conditions d'accès\nApplication accessible sur Apple App Store et Google Play Store.\n\n## 6. Limitation de responsabilité\nInformations fournies à titre indicatif. L'utilisateur demeure seul responsable de sa sécurité lors de ses déplacements.\n\n## 7. Droit applicable\nDroit français.`,
+      confidentialite: `# Politique de Confidentialité - AirTourer\n\n*Dernière mise à jour : 07/09/2026 (Version 1.0.28 / Build 29)*\n\n## 1. Responsable du Traitement\n- **Éditeur** : AirTourer\n- **Localisation** : Lille, France\n- **Email de contact / DPO** : airtourer.app@gmail.com\n\n## 2. Traitement des Données de Géolocalisation & Requêtes Serveur (Traitement éphémère)\n- **Traitement local en temps réel (RAM)** : Suivi continu, boussole, guidage pour circuits thématiques exécutés exclusivement dans la mémoire vive du smartphone.\n- **Requêtes de recherche éphémères (HTTPS/TLS)** : Transmission temporaire des coordonnées spatiales à Supabase PostgreSQL PostGIS dans le seul but de renvoyer la liste des POIs correspondants.\n- **Zéro conservation / Zéro historique** : Coordonnées JAMAIS enregistrées sur le serveur, ni journalisées dans des logs, non associées à un compte (aucun compte), purgées dès l'exécution SQL. Conforme au traitement éphémère Google Play Data Safety.\n- **Aucune localisation en arrière-plan** : L'application n'utilise pas la permission \`ACCESS_BACKGROUND_LOCATION\`.\n- **Désactivation possible** à tout moment dans les réglages système du smartphone.\n\n## 3. Absence de Compte & Stockage Local Sécurisé (SecureStore)\n- **Zéro compte requis** : Aucune création de compte, adresse email ou mot de passe demandés.\n- **Stockage chiffré local (SecureStore)** : Solde de crédits d'écoute, POIs débloqués, badges d'exploration et préférences de langue (FR/EN) stockés uniquement sur votre appareil.\n\n## 4. Transparence IA & Signalements Utilisateurs (AI Act UE 2024/1689)\n- Aucune donnée personnelle ni localisation n'est utilisée pour l'entraînement de modèles d'IA tiers.\n- Les signalements d'erreurs sur les POIs sont traités de façon anonyme sans profil nominatif.\n\n## 5. Publicité & Gestion du Consentement (Google AdMob & Google UMP)\n- **Vidéos récompensées AdMob** : Visionnage d'annonces récompensées pour obtenir 5 crédits d'écoute gratuits par vidéo.\n- **Transparence app-ads.txt** : Déclaration IAB officielle disponible sur https://riff4.github.io/app-ads.txt.\n- **Consentement RGPD via Google UMP** : Plateforme CMP certifiée pour l'UE/UK/EEE.\n- **Gestion des préférences** : Révocation et modification possibles à tout moment dans l'écran « Paramètres ».\n\n## 6. Lecture Audio en Arrière-plan (Foreground Service)\n- Permission \`FOREGROUND_SERVICE_MEDIA_PLAYBACK\` utilisée strictement pour permettre la lecture audio avec écran verrouillé ou application minimisée.\n\n## 7. Destinataires et Sous-traitants\n- Supabase Inc. (Base de données PostgreSQL / PostGIS pour requêtes éphémères de POI)\n- Google Ireland Limited (Google AdMob & Google UMP)\n- GitHub Pages (Hébergement du site et du fichier app-ads.txt)\n\n## 8. Durée de Conservation\n- Géolocalisation & Requêtes POI : 0 seconde (traitement volatil en RAM / éphémère sur serveur)\n- Données locales : Jusqu'à réinitialisation ou désinstallation de l'app.\n\n## 9. Vos Droits (RGPD)\nAccès, effacement (via réinitialisation/désinstallation), retrait du consentement. Contact : airtourer.app@gmail.com. Réclamation CNIL : www.cnil.fr.\n\n## 10. Conformité Stores\nConforme aux règles Google Play User Data Policy (Data Safety, AI Act, UMP, Foreground Service) et Apple App Store Privacy Guidelines.`
     };
 
     function copyTabMarkdown(tabKey) {

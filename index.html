@@ -27,7 +27,7 @@
     (function() {
       try {
         var params = new URLSearchParams(window.location.search);
-        if (params.has('poi')) {
+        if (params.has('poi') || params.has('route')) {
           document.documentElement.classList.add('is-deep-link');
         }
       } catch (e) {}
@@ -956,12 +956,12 @@
 
       <div class="deep-link-badge">
         <span class="deep-link-badge-dot"></span>
-        <span>Aiguillage mobile</span>
+        <span id="badgeText">Aiguillage mobile</span>
       </div>
 
-      <h1 class="deep-link-title">Ouverture d'AirTourer...</h1>
-      <p class="deep-link-subtitle">
-        Découvrez ce point d'intérêt et écoutez son guide audio immersif dans l'application. Si rien ne se passe automatiquement, utilisez les boutons ci-dessous.
+      <h1 id="title" class="deep-link-title">Ouverture d'AirTourer...</h1>
+      <p id="desc" class="deep-link-subtitle">
+        Redirection vers votre guide audio dans l'application AirTourer...
       </p>
 
       <div class="deep-link-actions">
@@ -1712,32 +1712,55 @@
     }
 
     // --- Deep Link & Mobile Redirection Handler ---
-    if (poiParam) {
-      const poiId = poiParam.trim();
-      const customScheme = `airtourer://poi/${poiId}`;
-      const playStoreUrl = "https://play.google.com/store/apps/details?id=com.audiotourer.app";
-      const androidIntent = `intent://poi/${poiId}#Intent;scheme=airtourer;package=com.audiotourer.app;S.browser_fallback_url=${encodeURIComponent(playStoreUrl)};end`;
+    const poiId = (urlParams.get('poi') || '').trim();
+    const routeId = (urlParams.get('route') || '').trim();
 
-      const btnOpen = document.getElementById('btnOpenApp') || document.getElementById('dl-btn-open');
-      const btnStore = document.getElementById('btnStore') || document.getElementById('dl-btn-store');
+    const isRoute = Boolean(routeId);
+    const targetId = routeId || poiId;
+    const targetPath = isRoute ? `route/${encodeURIComponent(targetId)}` : `poi/${encodeURIComponent(targetId)}`;
 
-      if (btnOpen) btnOpen.href = customScheme;
+    const playStoreUrl = "https://play.google.com/store/apps/details?id=com.audiotourer.app";
+    const customScheme = `airtourer://${targetPath}`;
+    const androidIntent = `intent://${targetPath}#Intent;scheme=airtourer;package=com.audiotourer.app;S.browser_fallback_url=${encodeURIComponent(playStoreUrl)};end`;
+
+    // Adaptation des textes UI
+    const titleEl = document.getElementById('title');
+    const descEl = document.getElementById('desc');
+    const badgeText = document.getElementById('badgeText');
+    const btnOpenApp = document.getElementById('btnOpenApp');
+    const btnStore = document.getElementById('btnStore');
+
+    const isAndroid = /Android/i.test(navigator.userAgent);
+    const isMetaInApp = /FBAN|FBAV|FB_IAB|Messenger|Instagram/i.test(navigator.userAgent);
+
+    if (targetId) {
+      if (isRoute) {
+        if (badgeText) badgeText.textContent = "Parcours guidé";
+        if (titleEl) titleEl.textContent = "Parcours guidé AirTourer";
+        if (descEl) descEl.textContent = isMetaInApp
+          ? "Appuyez sur le bouton ci-dessous pour ouvrir ce parcours guidé dans l'application AirTourer."
+          : "Redirection vers le parcours guidé dans l'application...";
+        if (btnOpenApp) {
+          btnOpenApp.innerHTML = '<i class="fa-solid fa-route"></i><span>Ouvrir le parcours</span>';
+        }
+        document.title = "Parcours guidé AirTourer";
+      } else {
+        if (badgeText) badgeText.textContent = "Aiguillage mobile";
+        if (titleEl) titleEl.textContent = isMetaInApp ? "Écouter sur AirTourer" : "Ouverture d'AirTourer...";
+        if (descEl) descEl.textContent = isMetaInApp
+          ? "Appuyez sur le bouton ci-dessous pour ouvrir ce point d'intérêt dans l'application AirTourer."
+          : "Redirection vers votre guide audio dans l'application...";
+        if (btnOpenApp) {
+          btnOpenApp.innerHTML = '<i class="fa-solid fa-headphones"></i><span>Ouvrir l\'application</span>';
+        }
+        document.title = isMetaInApp ? "AirTourer - Guide Audio" : "Ouverture d'AirTourer...";
+      }
+
+      if (btnOpenApp) btnOpenApp.href = customScheme;
       if (btnStore) btnStore.href = playStoreUrl;
 
-      const isAndroid = /Android/i.test(navigator.userAgent);
-      // Détecte les navigateurs internes Facebook, Messenger, Instagram
-      const isMetaInApp = /FBAN|FBAV|FB_IAB|Messenger|Instagram/i.test(navigator.userAgent);
-
-      // Si ouvert dans l'In-App Browser de Meta, désactiver l'auto-redirection
-      if (isMetaInApp) {
-        document.title = "AirTourer - Guide Audio";
-        const titleEl = document.querySelector('.deep-link-title');
-        const subtitleEl = document.querySelector('.deep-link-subtitle');
-        if (titleEl) titleEl.textContent = "Écouter sur AirTourer";
-        if (subtitleEl) subtitleEl.textContent = "Appuyez sur le bouton ci-dessous pour ouvrir ce point d'intérêt dans l'application AirTourer.";
-      } else {
-        // On ne déclenche l'auto-redirection que si l'utilisateur est dans un vrai navigateur externe
-        document.title = "Ouverture d'AirTourer...";
+      // Auto-redirection uniquement si hors navigateurs internes Meta
+      if (!isMetaInApp) {
         if (isAndroid) {
           window.location.href = androidIntent;
         } else {
@@ -1771,7 +1794,7 @@
       if (activeBtn) activeBtn.classList.add('active');
 
       // Update Page Title and Meta Description (only if not currently displaying a deep link)
-      if (!poiParam) {
+      if (!targetId) {
         if (currentLang === 'en') {
           document.title = "AirTourer - Legal Notices, Privacy Policy & AI Transparency";
           const metaDesc = document.querySelector('meta[name="description"]');
